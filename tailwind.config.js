@@ -24,7 +24,12 @@ export default {
             },
             fontSize: {
                 title: '48px',
-            }
+                '6.25xl': '4rem',
+                '1.75xl': '1.75rem',
+            },
+            borderRadius: {
+                rem: '1rem',
+            },
         },
     },
     plugins: [],
