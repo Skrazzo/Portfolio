@@ -13,6 +13,7 @@ export default {
                     secondary: '#ABABAB', // Secondary on green bg
                     dark: '#384D40', // Primary on white bg
                     green: '#ABD4BC', // idk
+                    'green-light': '#E3FFEE', // light green text
                 },
                 gradient: {
                     from: '#D3FF77',
@@ -21,6 +22,9 @@ export default {
                 duck: '#FEE176',
 
             },
+            fontSize: {
+                title: '48px',
+            }
         },
     },
     plugins: [],
