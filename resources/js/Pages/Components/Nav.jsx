@@ -17,7 +17,7 @@ export default function Nav() {
 
     return (
         <nav className="before-lg:px-12 before-lg:py-8 flex justify-between px-8 py-6 duration-150 max-sm:flex-col max-sm:flex-col-reverse max-sm:gap-4">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 max-sm:hidden">
                 <IconEarth className="xl:w-section-icon w-12" />
                 <TypeComponent
                     sequence={[
