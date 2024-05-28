@@ -36,6 +36,10 @@ export default {
                 xs: "400px",
                 "before-lg": `${1024 + 24}px`,
             },
+            boxShadow: {
+                glow: "0 0 10px 0",
+                "glow-hover": "0 0 20px 0",
+            },
         },
     },
     plugins: [],

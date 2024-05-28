@@ -22,7 +22,7 @@ export default function PictureTitle() {
                     <h1 className="bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text text-6.25xl font-extrabold text-transparent">
                         Full-stack developer
                     </h1>
-                    <button className="mt-8 rounded-rem bg-gradient-to-r from-gradient-from to-gradient-to px-8 py-4 text-1.75xl font-bold text-bg-green max-sm:rounded-full">
+                    <button className="shadow-glow hover:shadow-glow-hover mt-8 rounded-rem bg-gradient-to-r from-gradient-from to-gradient-to px-8 py-4 text-1.75xl font-bold text-bg-green shadow-gradient-to/10 duration-150 hover:shadow-gradient-to/20 max-sm:rounded-full">
                         CONTACT ME
                     </button>
                 </div>
@@ -30,11 +30,11 @@ export default function PictureTitle() {
 
             <Wave1
                 className={`absolute 
-                -translate-y-[120px] 
-                fill-bg-green-light
-                max-[1400px]:-translate-y-[100px]
-                max-[1100px]:-translate-y-[80px]
-                max-lg:hidden
+                    -translate-y-[120px] 
+                    fill-bg-green-light
+                    max-[1400px]:-translate-y-[100px]
+                    max-[1100px]:-translate-y-[80px]
+                    max-lg:hidden
                 `}
             />
             <Wave1

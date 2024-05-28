@@ -8,7 +8,7 @@ import IconContactMe from "../Icons/IconContactMe";
 export default function Nav() {
     const NavLink = ({ text, icon }) => (
         <div
-            className={`text-md flex cursor-pointer select-none items-center gap-2 rounded-full text-text-green-light duration-150 hover:text-text-green xl:text-lg 2xl:text-2xl`}
+            className={`text-md flex cursor-pointer select-none items-center gap-2 rounded-full text-text-green-light duration-150 hover:scale-105 hover:text-text-green xl:text-lg 2xl:text-2xl`}
         >
             {icon}
             <span className="hidden lg:inline">{text}</span>
