@@ -5,32 +5,38 @@ export default {
         extend: {
             colors: {
                 bg: {
-                    green: '#222724',
-                    "green-light": '#2D3932',
+                    green: "#222724",
+                    "green-light": "#2D3932",
                 },
                 text: {
-                    primary: '#FFFFFF', // Primary on green background
-                    secondary: '#ABABAB', // Secondary on green bg
-                    dark: '#384D40', // Primary on white bg
-                    green: '#ABD4BC', // idk
-                    'green-light': '#E3FFEE', // light green text
+                    primary: "#FFFFFF", // Primary on green background
+                    secondary: "#ABABAB", // Secondary on green bg
+                    dark: "#384D40", // Primary on white bg
+                    green: "#ABD4BC", // idk
+                    "green-light": "#E3FFEE", // light green text
                 },
                 gradient: {
-                    from: '#D3FF77',
-                    to: '#8AFF77',
+                    from: "#D3FF77",
+                    to: "#8AFF77",
                 },
-                duck: '#FEE176',
-
+                duck: "#FEE176",
             },
             fontSize: {
-                title: '48px',
-                '6.25xl': '4rem',
-                '1.75xl': '1.75rem',
+                title: "48px",
+                "6.25xl": "4rem",
+                "1.75xl": "1.75rem",
             },
             borderRadius: {
-                rem: '1rem',
+                rem: "1rem",
+            },
+            width: {
+                "section-icon": "4.25rem", // 68px
+            },
+            screens: {
+                xs: "400px",
+                "before-lg": `${1024 + 24}px`,
             },
         },
     },
     plugins: [],
-}
+};
