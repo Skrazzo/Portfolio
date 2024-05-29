@@ -3,7 +3,7 @@ import IconInfo from "../Icons/IconInfo";
 
 export default function AboutMe() {
     return (
-        <main className="container mt-36 max-w-6xl border">
+        <main className="container mt-36 max-w-6xl">
             <div className="flex items-center gap-8">
                 <div>
                     <div className="h-20 w-20 rounded-full bg-bg-green-light p-4">
@@ -15,11 +15,17 @@ export default function AboutMe() {
                 </p>
             </div>
 
-            <div className="flex">
-                <div className="flex w-20 justify-center">
-                    <div className="flex h-full w-1 border border-red-500"></div>
+            <div className="mt-4 flex">
+                <div className="flex min-w-20 justify-center">
+                    <div className="flex h-full w-1 bg-bg-green-light"></div>
                 </div>
-                <p></p>
+                <p className="py-2 text-4xl text-bg-green-light">
+                    Lorem mollit labore nisi irure velit nostrud dolore
+                    exercitation ex ad quis et commodo qui. Culpa incididunt
+                    eiusmod pariatur proident officia ipsum duis laboris
+                    cupidatat laboris aliqua. Exercitation qui reprehenderit
+                    Lorem cupidatat. Cillum sint velit enim deserunt.
+                </p>
             </div>
         </main>
     );
