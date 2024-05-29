@@ -2,6 +2,9 @@
 export default {
     content: ["./resources/**/*.blade.php", "./resources/**/*.{js,ts,jsx,tsx}"],
     theme: {
+        container: {
+            center: true,
+        },
         extend: {
             colors: {
                 bg: {
