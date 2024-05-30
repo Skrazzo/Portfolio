@@ -20,11 +20,11 @@ export default function AboutMe() {
                     <div className="flex h-full w-1 bg-bg-green-light"></div>
                 </div>
                 <p className="py-2 text-4xl text-bg-green-light">
-                    Lorem mollit labore nisi irure velit nostrud dolore
-                    exercitation ex ad quis et commodo qui. Culpa incididunt
-                    eiusmod pariatur proident officia ipsum duis laboris
-                    cupidatat laboris aliqua. Exercitation qui reprehenderit
-                    Lorem cupidatat. Cillum sint velit enim deserunt.
+                    From a young age, I was interested in technology and gaming.
+                    At 10, I began scripting to automate game tasks. This
+                    sparked my passion for programming, leading me to learn C++
+                    and C#. In technical school, my interest shifted to web
+                    development. Today, I'm a dedicated full stack developer.
                 </p>
             </div>
         </main>
