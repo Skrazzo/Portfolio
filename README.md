@@ -1,1 +1,7 @@
-Most basic Laravel authentication system with ReactJS and Inertia
+# My portfolio (IKR so cool and awesome)
+
+## What it has
+- About me
+- Skills
+- My proudest projects
+- Contact me form
