@@ -4,6 +4,8 @@ import TypeComponent from "./TypeComponent";
 import IconSchool from "../Icons/IconSchool";
 import IconWeb from "../Icons/IconWeb";
 import Palette from "react-palette";
+import IconComputer from "../Icons/IconComputer";
+import IconDatabase from "../Icons/IconDatabase";
 
 export default function Skills() {
     const Skill = ({ toolTip = "", image = "", className = "" }) => (
@@ -116,7 +118,7 @@ export default function Skills() {
                     />
                     <SkillsContainer
                         skillIcon={
-                            <IconWeb className="h-full w-full fill-bg-green" />
+                            <IconComputer className="h-full w-full fill-bg-green" />
                         }
                         skills={[
                             { image: "apache.png", name: "apache" },
@@ -137,7 +139,7 @@ export default function Skills() {
                     />
                     <SkillsContainer
                         skillIcon={
-                            <IconWeb className="h-full w-full fill-bg-green" />
+                            <IconDatabase className="h-full w-full fill-bg-green" />
                         }
                         skills={[
                             { image: "sqlite.png", name: "sqlite" },
