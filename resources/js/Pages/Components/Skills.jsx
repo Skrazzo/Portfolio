@@ -12,7 +12,7 @@ export default function Skills() {
         <Palette src={`./Skills/${image}`}>
             {({ data }) => (
                 <div
-                    className={`tooltip-container h-20 w-20 rounded-full  duration-200 hover:-translate-y-2 hover:scale-105 hover:bg-bg-green-light`}
+                    className={`tooltip-container h-14 w-14 rounded-full duration-200 hover:-translate-y-2  hover:scale-105 hover:bg-bg-green-light sm:h-20 sm:w-20`}
                 >
                     <div
                         // tooltip
@@ -37,7 +37,7 @@ export default function Skills() {
     const SkillsContainer = ({ skillIcon = <></>, skills = [] }) => (
         <div className="mt-3 flex gap-6">
             <div className="flex flex-col items-center gap-3">
-                <div className="h-20 w-20 rounded-full bg-gradient-to-b from-gradient-from to-gradient-to p-4">
+                <div className="h-14 w-14 rounded-full bg-gradient-to-b from-gradient-from to-gradient-to p-2 sm:h-20 sm:w-20 sm:p-4">
                     {skillIcon}
                 </div>
 
@@ -59,9 +59,9 @@ export default function Skills() {
 
     return (
         <>
-            <Wave className="mt-12 fill-bg-green" />
-            <div className="bg-bg-green px-12">
-                <div className="flex items-center gap-4">
+            <Wave className="mt-12 translate-y-1 fill-bg-green" />
+            <div className="bg-bg-green px-4">
+                <div className="container flex max-w-6xl items-center gap-4 max-sm:py-4 sm:px-4">
                     <IconSchool className="w-12 xl:w-section-icon" />
                     <TypeComponent
                         sequence={["My skills"]}
@@ -69,7 +69,7 @@ export default function Skills() {
                     />
                 </div>
 
-                <div className="container mt-12 max-w-6xl px-4">
+                <div className="container max-w-6xl sm:mt-16 sm:px-4">
                     <SkillsContainer
                         skillIcon={
                             <IconWeb className="h-full w-full fill-bg-green" />
@@ -98,7 +98,7 @@ export default function Skills() {
                             { image: "livewire.png", name: "livewire" },
                             {
                                 image: "alphine.png",
-                                name: "alphine.js",
+                                name: "alphine.JS",
                                 className: "rounded-full",
                             },
                             { image: "vite.svg", name: "vite" },
