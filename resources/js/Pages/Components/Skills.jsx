@@ -60,7 +60,7 @@ export default function Skills() {
     return (
         <>
             <Wave className="mt-12 translate-y-1 fill-bg-green" />
-            <div className="bg-bg-green px-4">
+            <div className="bg-bg-green px-4 pb-8">
                 <div className="container flex max-w-6xl items-center gap-4 max-sm:py-4 sm:px-4">
                     <IconSchool className="w-12 xl:w-section-icon" />
                     <TypeComponent
@@ -148,6 +148,7 @@ export default function Skills() {
                     />
                 </div>
             </div>
+            <Wave className="-translate-y-1 rotate-180 fill-bg-green" />
         </>
     );
 }
