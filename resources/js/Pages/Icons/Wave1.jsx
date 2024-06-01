@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Wave({ className = "" }) {
+export default function Wave1({ className = "" }) {
     return (
         <svg
             id="wave"

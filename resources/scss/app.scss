@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.tooltip-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    .tooltip {
+        position: absolute;
+        top: 0;
+
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.5rem;
+
+        color: #ffffff;
+        font-weight: 700;
+
+        transition: 250ms ease;
+        opacity: 0;
+        scale: 0.7;
+    }
+
+    &:hover {
+        .tooltip {
+            opacity: 1;
+            scale: 1;
+            top: -2.5rem;
+        }
+    }
+}

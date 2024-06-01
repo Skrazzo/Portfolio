@@ -17,7 +17,7 @@ export default function AboutMe() {
 
             <div className="mt-4 flex duration-300">
                 <div className="flex min-w-14 justify-center sm:min-w-20">
-                    <div className="flex h-full w-1 bg-bg-green-light"></div>
+                    <div className="flex h-full w-1 rounded-full bg-bg-green-light"></div>
                 </div>
                 <div>
                     <p className="py-2 text-2xl text-bg-green-light duration-300 sm:text-4xl">

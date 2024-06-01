@@ -16,10 +16,11 @@ export default function Nav() {
     );
 
     return (
-        <nav className="before-lg:px-12 before-lg:py-8 flex justify-between px-8 py-6 duration-150 max-sm:flex-col max-sm:flex-col-reverse max-sm:gap-4">
+        <nav className="flex justify-between px-8 py-6 duration-150 max-sm:flex-col max-sm:flex-col-reverse max-sm:gap-4 before-lg:px-12 before-lg:py-8">
             <div className="flex items-center gap-4 max-sm:hidden">
-                <IconEarth className="xl:w-section-icon w-12" />
+                <IconEarth className="w-12 xl:w-section-icon" />
                 <TypeComponent
+                    title
                     sequence={[
                         "Hello world",
                         5000,
