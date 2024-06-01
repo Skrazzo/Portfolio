@@ -2,6 +2,9 @@
 export default {
     content: ["./resources/**/*.blade.php", "./resources/**/*.{js,ts,jsx,tsx}"],
     theme: {
+        container: {
+            center: true,
+        },
         extend: {
             colors: {
                 bg: {
@@ -22,7 +25,7 @@ export default {
                 duck: "#FEE176",
             },
             fontSize: {
-                title: "48px",
+                title: "48px", // 3rem
                 "6.25xl": "4rem",
                 "1.75xl": "1.75rem",
             },

@@ -22,7 +22,7 @@ export default function PictureTitle() {
                     <h1 className="bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text text-6.25xl font-extrabold text-transparent">
                         Full-stack developer
                     </h1>
-                    <button className="shadow-glow hover:shadow-glow-hover mt-8 rounded-rem bg-gradient-to-r from-gradient-from to-gradient-to px-8 py-4 text-1.75xl font-bold text-bg-green shadow-gradient-to/10 duration-150 hover:shadow-gradient-to/20 max-sm:rounded-full">
+                    <button className="mt-8 rounded-rem bg-gradient-to-r from-gradient-from to-gradient-to px-8 py-4 text-1.75xl font-bold text-bg-green shadow-glow shadow-gradient-to/10 duration-150 hover:shadow-glow-hover hover:shadow-gradient-to/20 max-sm:rounded-full">
                         CONTACT ME
                     </button>
                 </div>
