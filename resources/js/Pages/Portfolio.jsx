@@ -4,6 +4,7 @@ import Nav from "./Components/Nav";
 import PictureTitle from "./Components/PictureTitle";
 import Wave from "./Icons/Wave1";
 import AboutMe from "./Components/AboutMe";
+import Skills from "./Components/Skills";
 
 export default function Portfolio() {
     return (
@@ -13,7 +14,7 @@ export default function Portfolio() {
                 <PictureTitle />
             </div>
             <AboutMe />
-
+            <Skills />
             <div className="my-36"></div>
         </>
     );
