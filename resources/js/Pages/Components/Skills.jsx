@@ -6,7 +6,7 @@ import IconWeb from "../Icons/IconWeb";
 import Palette from "react-palette";
 
 export default function Skills() {
-    const Skill = ({ toolTip = "", image = "" }) => (
+    const Skill = ({ toolTip = "", image = "", className = "" }) => (
         <Palette src={`./Skills/${image}`}>
             {({ data }) => (
                 <div
@@ -17,9 +17,16 @@ export default function Skills() {
                         style={{ backgroundColor: data.vibrant }}
                         className="tooltip"
                     >
-                        <span className="text-nowrap">{toolTip}</span>
+                        <span className="text-nowrap capitalize">
+                            {toolTip}
+                        </span>
                     </div>
-                    <img className="object-contain" src={`./Skills/${image}`} />
+                    <div className="grid place-items-center">
+                        <img
+                            className={`w-5/6 object-contain ${className}`}
+                            src={`./Skills/${image}`}
+                        />
+                    </div>
                 </div>
             )}
         </Palette>
@@ -37,7 +44,12 @@ export default function Skills() {
 
             <div className="flex flex-1 flex-wrap gap-3">
                 {skills.map((x, i) => (
-                    <Skill key={i} toolTip={x.name} image={x.image} />
+                    <Skill
+                        key={i}
+                        toolTip={x.name}
+                        image={x.image}
+                        className={x.className}
+                    />
                 ))}
             </div>
         </div>
@@ -60,28 +72,77 @@ export default function Skills() {
                         skillIcon={
                             <IconWeb className="h-full w-full fill-bg-green" />
                         }
-                        skills={new Array(20).fill({
-                            image: "react.webp",
-                            name: "ReactJS",
-                        })}
+                        skills={[
+                            { image: "html.svg", name: "HTML" },
+                            { image: "css.svg", name: "CSS" },
+                            { image: "js.png", name: "JS" },
+                            { image: "jquery.svg", name: "jQuery" },
+                            { image: "bootstrap.png", name: "bootstrap" },
+                            { image: "tailwind.png", name: "tailwindcss" },
+                            { image: "scss.png", name: "scss" },
+                            {
+                                image: "mantine.png",
+                                name: "mantine.dev",
+                                className: "rounded-full",
+                            },
+                            { image: "php.png", name: "PHP" },
+                            { image: "react.png", name: "react" },
+                            { image: "laravel.png", name: "laravel" },
+                            {
+                                image: "filament.png",
+                                name: "filament",
+                                className: "rounded-full",
+                            },
+                            { image: "livewire.png", name: "livewire" },
+                            {
+                                image: "alphine.png",
+                                name: "alphine.js",
+                                className: "rounded-full",
+                            },
+                            { image: "vite.svg", name: "vite" },
+                            { image: "vitest.svg", name: "vitest" },
+                            {
+                                image: "phpunit.png",
+                                name: "PHPUnit",
+                                className: "rounded-full",
+                            },
+                            { image: "playwright.png", name: "playwright" },
+                            {
+                                image: "puppeteer.png",
+                                name: "puppeteer",
+                                className: "rounded-full",
+                            },
+                        ]}
                     />
                     <SkillsContainer
                         skillIcon={
                             <IconWeb className="h-full w-full fill-bg-green" />
                         }
-                        skills={new Array(5).fill({
-                            image: "scss.png",
-                            name: "Scss",
-                        })}
+                        skills={[
+                            { image: "apache.png", name: "apache" },
+                            { image: "nginx.svg", name: "nginx" },
+                            { image: "linux.png", name: "linux" },
+                            { image: "node.svg", name: "node.JS" },
+                            {
+                                image: "npm.png",
+                                name: "npm",
+                                className: "lowercase",
+                            },
+                            { image: "bun.svg", name: "bun" },
+                            { image: "cplusplus.png", name: "c++" },
+                            { image: "csharp.png", name: "c#" },
+                            { image: "python.png", name: "python" },
+                            { image: "postman.png", name: "postman" },
+                        ]}
                     />
                     <SkillsContainer
                         skillIcon={
                             <IconWeb className="h-full w-full fill-bg-green" />
                         }
-                        skills={new Array(2).fill({
-                            image: "mysql.png",
-                            name: "Mysql Database",
-                        })}
+                        skills={[
+                            { image: "sqlite.png", name: "sqlite" },
+                            { image: "mysql.png", name: "mysql" },
+                        ]}
                     />
                 </div>
             </div>
