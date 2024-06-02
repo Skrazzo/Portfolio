@@ -90,6 +90,7 @@ export default function Skills() {
                             { image: "php.png", name: "PHP" },
                             { image: "react.png", name: "react" },
                             { image: "laravel.png", name: "laravel" },
+                            { image: "inertia.svg", name: "inertiajs" },
                             {
                                 image: "filament.png",
                                 name: "filament",

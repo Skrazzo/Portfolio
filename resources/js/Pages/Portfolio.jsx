@@ -5,6 +5,7 @@ import PictureTitle from "./Components/PictureTitle";
 import Wave from "./Icons/Wave1";
 import AboutMe from "./Components/AboutMe";
 import Skills from "./Components/Skills";
+import MyProjects from "./Components/MyProjects";
 
 export default function Portfolio() {
     return (
@@ -15,6 +16,7 @@ export default function Portfolio() {
             </div>
             <AboutMe />
             <Skills />
+            <MyProjects />
             <div className="my-36"></div>
         </>
     );
