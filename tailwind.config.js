@@ -7,6 +7,9 @@ export default {
         },
         extend: {
             colors: {
+                icon: {
+                    project: "#43584C",
+                },
                 bg: {
                     green: "#222724",
                     "green-light": "#2D3932",
@@ -34,6 +37,9 @@ export default {
             },
             width: {
                 "section-icon": "4.25rem", // 68px
+            },
+            padding: {
+                18: "72px",
             },
             screens: {
                 xs: "400px",
