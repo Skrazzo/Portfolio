@@ -104,16 +104,14 @@ export default function MyProjects() {
             active,
             carouselState: { currentSlide, deviceType },
         } = rest;
-        const carouselItems = [<></>];
+        // const carouselItems = [<></>, <></>];
         // onMove means if dragging or swiping in progress.
         // active is provided by this lib for checking if the item is active or not.
         return (
             <button
-                className={active ? "active" : "inactive"}
+                className={active ? "carousel-btn-active" : "carousel-btn"}
                 onClick={() => onClick()}
-            >
-                {React.Children.toArray(carouselItems)[index]}
-            </button>
+            ></button>
         );
     };
 
@@ -138,7 +136,7 @@ export default function MyProjects() {
                     ref={CarouselRef}
                     responsive={CarouselBreakPoints}
                     arrows={false}
-                    className="flex-1"
+                    className="flex-1 pb-12"
                     swipeable={true}
                     infinite
                     showDots

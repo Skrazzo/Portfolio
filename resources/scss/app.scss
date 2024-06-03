@@ -34,3 +34,12 @@
 html {
     --plyr-color-main: #2e4930;
 }
+
+.carousel-btn {
+    padding: 0.5rem 1rem;
+    background-color: red;
+
+    &-active {
+        @extend .carousel-btn;
+    }
+}
