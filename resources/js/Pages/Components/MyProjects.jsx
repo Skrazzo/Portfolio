@@ -100,18 +100,17 @@ export default function MyProjects() {
     const CustomDot = ({ onClick, ...rest }) => {
         const {
             onMove,
-            index,
             active,
             carouselState: { currentSlide, deviceType },
         } = rest;
-        // const carouselItems = [<></>, <></>];
-        // onMove means if dragging or swiping in progress.
-        // active is provided by this lib for checking if the item is active or not.
+
         return (
             <button
-                className={active ? "carousel-btn-active" : "carousel-btn"}
+                className={`${active ? "carousel-btn-active" : "carousel-btn"} ml-1 first:ml-0`}
                 onClick={() => onClick()}
-            ></button>
+            >
+                <div className="bg"></div>
+            </button>
         );
     };
 
