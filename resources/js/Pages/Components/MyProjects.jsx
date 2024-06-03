@@ -1,8 +1,10 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import TypeComponent from "./TypeComponent";
 import IconDeployedCode from "../Icons/IconDeployedCode";
 import IconChevron from "../Icons/IconChevron";
 import PlyrComponent from "./PlyrComponent";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 export default function MyProjects() {
     const ProjectContainer = ({
@@ -66,13 +68,52 @@ export default function MyProjects() {
                         </section>
 
                         <div>
-                            <div className="overflow-hidden rounded-lg shadow-2xl">
-                                <PlyrComponent />
+                            <div className="overflow-hidden rounded-lg shadow-xl">
+                                <PlyrComponent
+                                    sources={{
+                                        type: "video",
+                                        sources: [
+                                            {
+                                                src: showcaseUrl,
+                                                type: "video/mp4",
+                                            },
+                                        ],
+                                    }}
+                                />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        );
+    };
+
+    const CarouselBreakPoints = {
+        main: {
+            breakpoint: { min: 0, max: 9999 },
+            items: 1,
+        },
+    };
+
+    const CarouselRef = useRef(null);
+
+    const CustomDot = ({ onClick, ...rest }) => {
+        const {
+            onMove,
+            index,
+            active,
+            carouselState: { currentSlide, deviceType },
+        } = rest;
+        const carouselItems = [<></>];
+        // onMove means if dragging or swiping in progress.
+        // active is provided by this lib for checking if the item is active or not.
+        return (
+            <button
+                className={active ? "active" : "inactive"}
+                onClick={() => onClick()}
+            >
+                {React.Children.toArray(carouselItems)[index]}
+            </button>
         );
     };
 
@@ -86,26 +127,69 @@ export default function MyProjects() {
                 />
             </div>
             <div className="mt-2 flex min-h-[500px] px-4">
-                <div className="grid place-items-center">
+                <div
+                    className="grid place-items-center"
+                    onClick={() => CarouselRef.current.previous()}
+                >
                     <IconChevron className="cursor-pointer fill-bg-green-light/70 duration-200 hover:scale-125 hover:fill-bg-green-light active:-translate-x-2 active:scale-100" />
                 </div>
-                <ProjectContainer
-                    title={"Memory game"}
-                    icon={"Brain"}
-                    tech={[
-                        "react.png",
-                        "laravel.png",
-                        "inertia.svg",
-                        "tailwind.png",
-                        "scss.png",
-                    ]}
-                    description={`
-                        Made with Laravel-b, Breeze-b authentication system, React-b, tailwindcss-b, SCSS-b and combined everything with 
-                        Inertia-b.-n This basic memory game has nice animations, dashboard, profile managment, leaderboard, theme 
-                        selector and of course, the game itself. It's a nice way of spending half an hour to practice 
-                        your memory.`}
-                />
-                <div className="grid place-items-center">
+
+                <Carousel
+                    ref={CarouselRef}
+                    responsive={CarouselBreakPoints}
+                    arrows={false}
+                    className="flex-1"
+                    swipeable={true}
+                    infinite
+                    showDots
+                    customDot={<CustomDot />}
+                >
+                    <ProjectContainer
+                        title={"Memory game"}
+                        icon={"Brain"}
+                        showcaseUrl={
+                            "https://seafile.skrazzo.xyz/f/87e71b2754904eeeb775/?dl=1"
+                        }
+                        tech={[
+                            "react.png",
+                            "laravel.png",
+                            "inertia.svg",
+                            "tailwind.png",
+                            "scss.png",
+                        ]}
+                        description={`
+                            Made with Laravel-b, Breeze-b authentication system, React-b, tailwindcss-b, SCSS-b and combined everything with 
+                            Inertia-b.-n This basic memory game has nice animations, dashboard, profile managment, leaderboard, theme 
+                            selector and of course, the game itself. It's a nice way of spending half an hour to practice 
+                            your memory.
+                        `}
+                    />
+                    <ProjectContainer
+                        title={"Nigga"}
+                        icon={"Computer"}
+                        showcaseUrl={
+                            "https://seafile.skrazzo.xyz/f/9192208b91444499951d/?dl=1"
+                        }
+                        tech={[
+                            "react.png",
+                            "laravel.png",
+                            "inertia.svg",
+                            "tailwind.png",
+                            "scss.png",
+                        ]}
+                        description={`
+                            Made with Laravel-b, Breeze-b authentication system, React-b, tailwindcss-b, SCSS-b and combined everything with 
+                            Inertia-b.-n This basic memory game has nice animations, dashboard, profile managment, leaderboard, theme 
+                            selector and of course, the game itself. It's a nice way of spending half an hour to practice 
+                            your memory.
+                        `}
+                    />
+                </Carousel>
+
+                <div
+                    className="grid place-items-center"
+                    onClick={() => CarouselRef.current.next()}
+                >
                     <IconChevron className="rotate-180 cursor-pointer fill-bg-green-light/70 duration-200 hover:scale-125 hover:fill-bg-green-light active:translate-x-2 active:scale-100" />
                 </div>
             </div>

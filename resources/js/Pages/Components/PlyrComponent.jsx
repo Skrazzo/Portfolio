@@ -60,7 +60,7 @@ PlyrComponent.defaultProps = {
         type: "video",
         sources: [
             {
-                src: "https://seafile.skrazzo.xyz/f/87e71b2754904eeeb775/?dl=1",
+                src: "",
                 type: "video/mp4",
             },
         ],
