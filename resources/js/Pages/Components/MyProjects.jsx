@@ -6,7 +6,7 @@ import PlyrComponent from "./PlyrComponent";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-export default function MyProjects() {
+export default function MyProjects({ projects }) {
     const ProjectContainer = ({
         icon,
         title,
@@ -61,7 +61,7 @@ export default function MyProjects() {
                             {paragraphs.map((p, idx) => (
                                 <div
                                     key={idx}
-                                    className="text-project-description mt-8 first:mt-0"
+                                    className="text-project-description mt-8 select-none first:mt-0"
                                     dangerouslySetInnerHTML={{ __html: p }}
                                 />
                             ))}
@@ -123,7 +123,7 @@ export default function MyProjects() {
                     className="font-bold text-bg-green-light"
                 />
             </div>
-            <div className="mt-2 flex min-h-[500px] px-4">
+            <div className="mt-2 flex min-h-[500px] bg-gradient-to-b from-transparent to-bg-green/20 p-4  ">
                 <div
                     className="grid place-items-center"
                     onClick={() => CarouselRef.current.previous()}
@@ -141,46 +141,9 @@ export default function MyProjects() {
                     showDots
                     customDot={<CustomDot />}
                 >
-                    <ProjectContainer
-                        title={"Memory game"}
-                        icon={"Brain"}
-                        showcaseUrl={
-                            "https://seafile.skrazzo.xyz/f/87e71b2754904eeeb775/?dl=1"
-                        }
-                        tech={[
-                            "react.png",
-                            "laravel.png",
-                            "inertia.svg",
-                            "tailwind.png",
-                            "scss.png",
-                        ]}
-                        description={`
-                            Made with Laravel-b, Breeze-b authentication system, React-b, tailwindcss-b, SCSS-b and combined everything with 
-                            Inertia-b.-n This basic memory game has nice animations, dashboard, profile managment, leaderboard, theme 
-                            selector and of course, the game itself. It's a nice way of spending half an hour to practice 
-                            your memory.
-                        `}
-                    />
-                    <ProjectContainer
-                        title={"Nigga"}
-                        icon={"Computer"}
-                        showcaseUrl={
-                            "https://seafile.skrazzo.xyz/f/9192208b91444499951d/?dl=1"
-                        }
-                        tech={[
-                            "react.png",
-                            "laravel.png",
-                            "inertia.svg",
-                            "tailwind.png",
-                            "scss.png",
-                        ]}
-                        description={`
-                            Made with Laravel-b, Breeze-b authentication system, React-b, tailwindcss-b, SCSS-b and combined everything with 
-                            Inertia-b.-n This basic memory game has nice animations, dashboard, profile managment, leaderboard, theme 
-                            selector and of course, the game itself. It's a nice way of spending half an hour to practice 
-                            your memory.
-                        `}
-                    />
+                    {projects.map((project, idx) => (
+                        <ProjectContainer {...project} key={idx} />
+                    ))}
                 </Carousel>
 
                 <div

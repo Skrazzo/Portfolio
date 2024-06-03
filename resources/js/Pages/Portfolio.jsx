@@ -7,7 +7,7 @@ import AboutMe from "./Components/AboutMe";
 import Skills from "./Components/Skills";
 import MyProjects from "./Components/MyProjects";
 
-export default function Portfolio() {
+export default function Portfolio({ projects }) {
     return (
         <>
             <div className="bg-bg-green">
@@ -16,7 +16,7 @@ export default function Portfolio() {
             </div>
             <AboutMe />
             <Skills />
-            <MyProjects />
+            <MyProjects projects={projects} />
             <div className="my-36"></div>
         </>
     );
