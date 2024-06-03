@@ -8,12 +8,25 @@ export default function MyProjects() {
         icon,
         title,
         tech = [],
-        children,
+        description,
         showcaseUrl,
         githubUrl = "",
         demoUrl = "",
     }) => {
-        function helloWorld() {}
+        // Description -b means bold -n means newline
+        // Replace -b with strong tags
+        let matches = description.match(/\w{1,}(?=-b)/gim);
+        if (matches) {
+            matches.forEach((match) => {
+                description = description.replace(
+                    `${match}-b`,
+                    `<strong>${match}</strong>`,
+                );
+            });
+        }
+
+        // Repalace -n with new lines
+        let paragraphs = description.split("-n");
 
         // lazy load the icon
         const Icon = React.lazy(() => import(`../Icons/Icon${icon}`));
@@ -22,7 +35,7 @@ export default function MyProjects() {
             <div className="flex-1 sm:px-4">
                 <div className="flex items-center gap-2">
                     <Suspense fallback={"Loading..."}>
-                        <Icon className="fill-icon-project w-16" />
+                        <Icon className="w-16 fill-icon-project" />
                     </Suspense>
                     <p className="text-4xl font-medium text-bg-green-light/95">
                         {title}
@@ -30,16 +43,24 @@ export default function MyProjects() {
                 </div>
 
                 <div className="pl-18">
-                    <div className="flex gap-4">
-                        {tech.map((skill) => (
+                    <div className="mt-4 flex gap-4">
+                        {tech.map((skill, idx) => (
                             <img
-                                className="w-8 rounded-full"
+                                key={idx}
+                                className="w-8 rounded-md object-contain"
                                 src={`./Skills/${skill}`}
                             />
                         ))}
                     </div>
 
-                    <div>{children}</div>
+                    <section className="mt-4">
+                        {paragraphs.map((p, idx) => (
+                            <div
+                                className="text-project-description mt-8"
+                                dangerouslySetInnerHTML={{ __html: p }}
+                            />
+                        ))}
+                    </section>
                 </div>
             </div>
         );
@@ -65,11 +86,15 @@ export default function MyProjects() {
                         "react.png",
                         "laravel.png",
                         "inertia.svg",
-                        "filament.png",
+                        "tailwind.png",
+                        "scss.png",
                     ]}
-                >
-                    Hello world
-                </ProjectContainer>
+                    description={`
+                        Made with Laravel-b, Breeze-b authentication system, React-b, tailwindcss-b, SCSS-b and combined everything with 
+                        Inertia-b.-n This basic memory game has nice animations, dashboard, profile managment, leaderboard, theme 
+                        selector and of course, the game itself. It's a nice way of spending half an hour to practice 
+                        your memory.`}
+                />
                 <div className="grid place-items-center">
                     <IconChevron className="rotate-180 cursor-pointer fill-bg-green-light/70 duration-200 hover:scale-125 hover:fill-bg-green-light active:translate-x-2 active:scale-100" />
                 </div>

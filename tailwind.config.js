@@ -7,6 +7,7 @@ export default {
         },
         extend: {
             colors: {
+                "project-description": "#2E4B3F",
                 icon: {
                     project: "#43584C",
                 },
@@ -28,6 +29,7 @@ export default {
                 duck: "#FEE176",
             },
             fontSize: {
+                "project-description": "28px",
                 title: "48px", // 3rem
                 "6.25xl": "4rem",
                 "1.75xl": "1.75rem",
