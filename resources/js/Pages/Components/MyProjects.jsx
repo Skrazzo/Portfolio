@@ -2,6 +2,7 @@ import React, { Suspense, useEffect, useState } from "react";
 import TypeComponent from "./TypeComponent";
 import IconDeployedCode from "../Icons/IconDeployedCode";
 import IconChevron from "../Icons/IconChevron";
+import PlyrComponent from "./PlyrComponent";
 
 export default function MyProjects() {
     const ProjectContainer = ({
@@ -29,7 +30,7 @@ export default function MyProjects() {
         let paragraphs = description.split("-n");
 
         // lazy load the icon
-        const Icon = React.lazy(() => import(`../Icons/Icon${icon}`));
+        const Icon = React.lazy(() => import(`../Icons/Icon${icon}.jsx`));
 
         return (
             <div className="flex-1 sm:px-4">
@@ -53,14 +54,23 @@ export default function MyProjects() {
                         ))}
                     </div>
 
-                    <section className="mt-4">
-                        {paragraphs.map((p, idx) => (
-                            <div
-                                className="text-project-description mt-8"
-                                dangerouslySetInnerHTML={{ __html: p }}
-                            />
-                        ))}
-                    </section>
+                    <div className="mt-6 grid grid-cols-2 gap-4">
+                        <section>
+                            {paragraphs.map((p, idx) => (
+                                <div
+                                    key={idx}
+                                    className="text-project-description mt-8 first:mt-0"
+                                    dangerouslySetInnerHTML={{ __html: p }}
+                                />
+                            ))}
+                        </section>
+
+                        <div>
+                            <div className="overflow-hidden rounded-lg shadow-2xl">
+                                <PlyrComponent />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
