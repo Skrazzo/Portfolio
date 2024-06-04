@@ -19,8 +19,10 @@
     "@inertiajs/inertia-react": "^0.8.1",
     "@inertiajs/react": "^1.0.15",
     "@vitejs/plugin-react": "^4.2.1",
+    "plyr": "^3.7.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-multi-carousel": "^2.8.5",
     "react-palette": "^1.0.2",
     "react-type-animation": "^3.2.0",
     "sass": "^1.77.2"

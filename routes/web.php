@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -11,4 +12,4 @@ use Inertia\Inertia;
 // Route::post('/register', [UserController::class, 'register'])->name('post.register');
 // Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
-Route::get('/', function () { return Inertia::render('Portfolio'); })->name('portfolio');
+Route::get('/', [ProjectsController::class, 'index'])->name('portfolio');

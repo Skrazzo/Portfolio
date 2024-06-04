@@ -49,7 +49,9 @@ export default function Nav() {
                         text={"My Projects"}
                         icon={
                             <IconDeployedCode
-                                className={"w-6 max-sm:w-10 lg:w-8"}
+                                className={
+                                    "w-6 fill-text-secondary max-sm:w-10 lg:w-8"
+                                }
                             />
                         }
                     />

@@ -7,6 +7,10 @@ export default {
         },
         extend: {
             colors: {
+                description: "#2E4B3F",
+                icon: {
+                    project: "#43584C",
+                },
                 bg: {
                     green: "#222724",
                     "green-light": "#2D3932",
@@ -25,6 +29,7 @@ export default {
                 duck: "#FEE176",
             },
             fontSize: {
+                "project-description": "28px",
                 title: "48px", // 3rem
                 "6.25xl": "4rem",
                 "1.75xl": "1.75rem",
@@ -35,8 +40,12 @@ export default {
             width: {
                 "section-icon": "4.25rem", // 68px
             },
+            padding: {
+                18: "72px",
+            },
             screens: {
                 xs: "400px",
+                xsm: "524px",
                 "before-lg": `${1024 + 24}px`,
             },
             boxShadow: {
