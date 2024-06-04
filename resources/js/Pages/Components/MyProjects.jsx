@@ -145,13 +145,14 @@ export default function MyProjects({ projects }) {
 
     return (
         <>
-            <div className="flex items-center gap-4 px-3 py-1 sm:px-4 sm:py-6">
+            {/* <div className="container flex max-w-6xl items-center gap-4 px-3 py-1 sm:px-4 sm:py-6">
                 <IconDeployedCode className="w-12 fill-bg-green-light/70 xl:w-section-icon " />
                 <TypeComponent
                     sequence={["My best projects"]}
                     className="font-bold text-bg-green-light"
                 />
-            </div>
+            </div> */}
+
             {/* bg-gradient-to-b from-transparent to-bg-green/20 p-4 */}
             <div className="mt-2 flex min-h-[500px]">
                 <div
