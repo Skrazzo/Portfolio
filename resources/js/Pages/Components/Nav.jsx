@@ -6,14 +6,20 @@ import IconDeployedCode from "../Icons/IconDeployedCode";
 import IconContactMe from "../Icons/IconContactMe";
 
 export default function Nav() {
-    const NavLink = ({ text, icon }) => (
+    const NavLink = ({ text, icon, onClick }) => (
         <div
+            onClick={onClick}
             className={`text-md flex cursor-pointer select-none items-center gap-2 rounded-full text-text-green-light duration-150 hover:scale-105 hover:text-text-green xl:text-lg 2xl:text-2xl`}
         >
             {icon}
             <span className="hidden lg:inline">{text}</span>
         </div>
     );
+
+    const scroll = (section) => {
+        const s = document.querySelector(`#${section}`);
+        s.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
 
     return (
         <nav className="flex justify-between px-8 py-6 duration-150 max-sm:flex-col max-sm:flex-col-reverse max-sm:gap-4 before-lg:px-12 before-lg:py-8">
@@ -38,12 +44,14 @@ export default function Nav() {
                         icon={
                             <IconEarth className={"w-6 max-sm:w-10 lg:w-8"} />
                         }
+                        onClick={() => scroll("aboutme")}
                     />
                     <NavLink
                         text={"My Skills"}
                         icon={
                             <IconSchool className={"w-6 max-sm:w-10 lg:w-8"} />
                         }
+                        onClick={() => scroll("skills")}
                     />
                     <NavLink
                         text={"My Projects"}
@@ -54,6 +62,7 @@ export default function Nav() {
                                 }
                             />
                         }
+                        onClick={() => scroll("projects")}
                     />
                     <NavLink
                         text={"Contact Me"}
@@ -62,6 +71,7 @@ export default function Nav() {
                                 className={"w-6 max-sm:w-10 lg:w-8"}
                             />
                         }
+                        onClick={() => scroll("contact")}
                     />
                 </div>
             </div>

@@ -14,9 +14,15 @@ export default function Portfolio({ projects }) {
                 <Nav />
                 <PictureTitle />
             </div>
-            <AboutMe />
-            <Skills />
-            <MyProjects projects={projects} />
+            <section id="aboutme">
+                <AboutMe />
+            </section>
+            <section id="skills">
+                <Skills />
+            </section>
+            <section id="projects">
+                <MyProjects projects={projects} />
+            </section>
             <div className="my-36"></div>
         </>
     );
