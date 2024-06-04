@@ -7,7 +7,7 @@ export default {
         },
         extend: {
             colors: {
-                "project-description": "#2E4B3F",
+                description: "#2E4B3F",
                 icon: {
                     project: "#43584C",
                 },
@@ -45,6 +45,7 @@ export default {
             },
             screens: {
                 xs: "400px",
+                xsm: "524px",
                 "before-lg": `${1024 + 24}px`,
             },
             boxShadow: {
