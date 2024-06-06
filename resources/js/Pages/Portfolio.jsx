@@ -6,6 +6,7 @@ import Wave from "./Icons/Wave1";
 import AboutMe from "./Components/AboutMe";
 import Skills from "./Components/Skills";
 import MyProjects from "./Components/MyProjects";
+import Timeline from "./Components/Timeline";
 
 export default function Portfolio({ projects }) {
     return (
@@ -22,6 +23,9 @@ export default function Portfolio({ projects }) {
             </section>
             <section id="projects">
                 <MyProjects projects={projects} />
+            </section>
+            <section id="timeline">
+                <Timeline />
             </section>
             <div className="my-36"></div>
         </>
