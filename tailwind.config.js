@@ -41,6 +41,9 @@ export default {
             width: {
                 "section-icon": "4.25rem", // 68px
             },
+            maxWidth: {
+                "timeline-description": "400px",
+            },
             padding: {
                 18: "72px",
             },
