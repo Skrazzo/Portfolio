@@ -29,6 +29,7 @@ export default {
                 duck: "#FEE176",
             },
             fontSize: {
+                "timeline-description": "20px",
                 "project-description": "28px",
                 title: "48px", // 3rem
                 "6.25xl": "4rem",
@@ -51,6 +52,7 @@ export default {
             boxShadow: {
                 glow: "0 0 10px 0",
                 "glow-hover": "0 0 20px 0",
+                chapter: "0 0 0 5px",
             },
         },
     },
