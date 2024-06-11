@@ -28,7 +28,11 @@ export default {
                 },
                 duck: "#FEE176",
             },
+            lineHeight: {
+                "project-description": "39.2px",
+            },
             fontSize: {
+                "timeline-description": "20px",
                 "project-description": "28px",
                 title: "48px", // 3rem
                 "6.25xl": "4rem",
@@ -39,6 +43,9 @@ export default {
             },
             width: {
                 "section-icon": "4.25rem", // 68px
+            },
+            maxWidth: {
+                "timeline-description": "400px",
             },
             padding: {
                 18: "72px",
@@ -51,6 +58,7 @@ export default {
             boxShadow: {
                 glow: "0 0 10px 0",
                 "glow-hover": "0 0 20px 0",
+                chapter: "0 0 0 5px",
             },
         },
     },

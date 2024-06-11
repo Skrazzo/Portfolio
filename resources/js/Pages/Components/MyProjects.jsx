@@ -37,7 +37,7 @@ export default function MyProjects({ projects }) {
         const Icon = React.lazy(() => import(`../Icons/Icon${icon}.jsx`));
 
         return (
-            <div className="flex-1 px-1 sm:px-4">
+            <div className="flex-1 px-2 sm:px-4">
                 <div className="flex items-center gap-2">
                     <Suspense fallback={"Loading..."}>
                         <Icon className="w-16 fill-icon-project max-lg:w-12 max-sm:w-10" />
@@ -50,7 +50,7 @@ export default function MyProjects({ projects }) {
                             {tech.map((skill, idx) => (
                                 <img
                                     key={idx}
-                                    className="max-xsm:hidden w-8 rounded-md object-contain max-sm:w-6"
+                                    className="w-8 rounded-md object-contain max-sm:w-6 max-xsm:hidden"
                                     src={`./Skills/${skill}`}
                                 />
                             ))}
@@ -65,7 +65,7 @@ export default function MyProjects({ projects }) {
                                 {paragraphs.map((p, idx) => (
                                     <div
                                         key={idx}
-                                        className="text-description mt-8 select-none text-xl leading-snug first:mt-0 lg:text-project-description"
+                                        className="mt-8 select-none text-xl leading-snug text-description first:mt-0 lg:text-project-description"
                                         dangerouslySetInnerHTML={{ __html: p }}
                                     />
                                 ))}
@@ -145,15 +145,6 @@ export default function MyProjects({ projects }) {
 
     return (
         <>
-            {/* <div className="container flex max-w-6xl items-center gap-4 px-3 py-1 sm:px-4 sm:py-6">
-                <IconDeployedCode className="w-12 fill-bg-green-light/70 xl:w-section-icon " />
-                <TypeComponent
-                    sequence={["My best projects"]}
-                    className="font-bold text-bg-green-light"
-                />
-            </div> */}
-
-            {/* bg-gradient-to-b from-transparent to-bg-green/20 p-4 */}
             <div className="mt-2 flex min-h-[500px]">
                 <div
                     className="grid place-items-center max-lg:hidden"

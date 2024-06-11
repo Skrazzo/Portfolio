@@ -20,13 +20,13 @@ export default function AboutMe() {
                     <div className="flex h-full w-1 rounded-full bg-bg-green-light"></div>
                 </div>
                 <div>
-                    <p className="py-2 text-2xl text-bg-green-light duration-300 sm:text-4xl">
+                    <p className="py-2 text-2xl leading-8 text-bg-green-light duration-300 sm:text-project-description sm:leading-project-description">
                         From a young age, I was interested in technology and
                         gaming. At 10, I began scripting to automate game tasks.
                         This sparked my passion for programming, leading me to
                         learn C++ and C#.
                     </p>
-                    <p className="mt-4 py-2 text-2xl text-bg-green-light duration-300 sm:text-4xl">
+                    <p className="mt-4 py-2 text-2xl leading-8 text-bg-green-light duration-300 sm:text-project-description sm:leading-project-description">
                         In technical school, my interest shifted to web
                         development. Today, I'm a dedicated full stack
                         developer.

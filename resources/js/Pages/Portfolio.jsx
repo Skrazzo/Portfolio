@@ -6,6 +6,7 @@ import Wave from "./Icons/Wave1";
 import AboutMe from "./Components/AboutMe";
 import Skills from "./Components/Skills";
 import MyProjects from "./Components/MyProjects";
+import Timeline from "./Components/Timeline";
 
 export default function Portfolio({ projects }) {
     return (
@@ -23,7 +24,10 @@ export default function Portfolio({ projects }) {
             <section id="projects">
                 <MyProjects projects={projects} />
             </section>
-            <div className="my-36"></div>
+            <section id="timeline">
+                <Timeline />
+            </section>
+            <div className="bg-bg-green py-36"></div>
         </>
     );
 }
