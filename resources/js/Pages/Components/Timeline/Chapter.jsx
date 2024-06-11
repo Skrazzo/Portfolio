@@ -7,7 +7,7 @@ export default function Chapter({
     idx = 1,
 }) {
     return (
-        <div className="mx-auto	max-w-screen-2xl">
+        <div className="mx-auto max-w-screen-2xl max-lg:hidden">
             <div
                 className={`flex ${calculateLeft(idx) ? "" : "flex-row-reverse"} items-center justify-center gap-8`}
             >
