@@ -28,6 +28,9 @@ export default {
                 },
                 duck: "#FEE176",
             },
+            lineHeight: {
+                "project-description": "39.2px",
+            },
             fontSize: {
                 "timeline-description": "20px",
                 "project-description": "28px",

@@ -17,7 +17,7 @@ export default function Skills() {
                     <div
                         // tooltip
                         style={{ backgroundColor: data.vibrant }}
-                        className="tooltip"
+                        className="tooltip select-none"
                     >
                         <span className="text-nowrap capitalize">
                             {toolTip}
