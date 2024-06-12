@@ -8,12 +8,14 @@ export default {
         extend: {
             colors: {
                 description: "#2E4B3F",
+                stars: "#6CC08F",
                 icon: {
                     project: "#43584C",
                 },
                 bg: {
                     green: "#222724",
                     "green-light": "#2D3932",
+                    footer: "#F8F9FA",
                 },
                 text: {
                     primary: "#FFFFFF", // Primary on green background
