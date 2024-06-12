@@ -2,6 +2,7 @@ import React from "react";
 import Wave1 from "../Icons/Wave1";
 import Chapter from "./Timeline/Chapter";
 import ChapterMobile from "./Timeline/ChapterMobile";
+import Wave2 from "../Icons/Wave2";
 
 export default function Timeline() {
     const timelineData = [
@@ -25,7 +26,7 @@ export default function Timeline() {
     return (
         <>
             <Wave1 className="mt-4 translate-y-1 fill-bg-green" />
-            <div className="bg-bg-green pt-8 text-white">
+            <div className="bg-bg-green pb-4 pt-8 text-white">
                 {timelineData.map((chapter, idx) => {
                     return (
                         <>
@@ -35,6 +36,7 @@ export default function Timeline() {
                     );
                 })}
             </div>
+            <Wave1 className="-translate-y-1 -scale-100 fill-bg-green" />
         </>
     );
 }

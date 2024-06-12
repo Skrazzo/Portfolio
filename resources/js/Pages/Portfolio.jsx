@@ -27,7 +27,7 @@ export default function Portfolio({ projects }) {
             <section id="timeline">
                 <Timeline />
             </section>
-            <div className="bg-bg-green py-36"></div>
+            <div className=" py-36"></div>
         </>
     );
 }
