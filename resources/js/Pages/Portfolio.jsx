@@ -7,6 +7,7 @@ import AboutMe from "./Components/AboutMe";
 import Skills from "./Components/Skills";
 import MyProjects from "./Components/MyProjects";
 import Timeline from "./Components/Timeline";
+import TipTap from "./Components/TipTap";
 
 export default function Portfolio({ projects }) {
     return (
@@ -27,6 +28,10 @@ export default function Portfolio({ projects }) {
             <section id="timeline">
                 <Timeline />
             </section>
+            <section id="contact">
+                <TipTap />
+            </section>
+
             <div className=" py-36"></div>
         </>
     );
