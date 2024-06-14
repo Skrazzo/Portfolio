@@ -73,6 +73,13 @@ export default function Reviews({ reviews = [] }) {
                     {reviews.map((review, idx) => (
                         <ReviewCard {...review} key={`review-${idx}`} />
                     ))}
+                    <div>
+                        <div className="flex items-center rounded-lg bg-bg-footer/70 px-20 py-16">
+                            <span className="text-text-secondary">
+                                More coming soon ...
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
