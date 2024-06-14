@@ -74,8 +74,8 @@ export default function Reviews({ reviews = [] }) {
                         <ReviewCard {...review} key={`review-${idx}`} />
                     ))}
                     <div>
-                        <div className="flex items-center rounded-lg bg-bg-footer/70 px-20 py-16">
-                            <span className="text-text-secondary">
+                        <div className="flex w-max items-center rounded-lg bg-bg-footer/70 px-20 py-16">
+                            <span className="text-xl text-text-secondary">
                                 More coming soon ...
                             </span>
                         </div>
