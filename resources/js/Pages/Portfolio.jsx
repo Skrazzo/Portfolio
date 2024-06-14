@@ -8,8 +8,9 @@ import Skills from "./Components/Skills";
 import MyProjects from "./Components/MyProjects";
 import Timeline from "./Components/Timeline";
 import TipTap from "./Components/TipTap";
+import Reviews from "./Components/Reviews";
 
-export default function Portfolio({ projects }) {
+export default function Portfolio({ projects, reviews }) {
     return (
         <>
             <div className="bg-bg-green">
@@ -28,9 +29,12 @@ export default function Portfolio({ projects }) {
             <section id="timeline">
                 <Timeline />
             </section>
-            <section id="contact">
-                <TipTap />
+            <section id="reviews">
+                <Reviews reviews={reviews} />
             </section>
+            {/* <section id="contact">
+                <TipTap />
+            </section> */}
 
             <div className=" py-36"></div>
         </>
