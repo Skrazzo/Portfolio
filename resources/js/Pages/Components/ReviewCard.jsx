@@ -40,10 +40,10 @@ export default function ReviewCard(props) {
 
     return (
         <div>
-            <div className="flex max-w-md flex-col gap-4 rounded-lg p-4 shadow-md">
+            <div className="flex w-max min-w-[348px] flex-col gap-4 rounded-lg p-4 shadow-md max-lg:w-full lg:max-w-md">
                 <div className="flex justify-between">
                     <div className="flex items-center gap-4">
-                        <div className="grid h-[50px] w-[50px] place-items-center rounded-full bg-text-green/50 ">
+                        <div className="grid place-items-center rounded-full bg-text-green/50 max-sm:hidden sm:h-[50px] sm:w-[50px] ">
                             <IconUser className="h-2/3 w-2/3 fill-text-primary" />
                         </div>
                         <div className="flex flex-col ">
