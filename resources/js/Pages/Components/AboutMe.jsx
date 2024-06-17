@@ -3,7 +3,7 @@ import IconInfo from "../Icons/IconInfo";
 
 export default function AboutMe() {
     return (
-        <main className="container mt-12 max-w-6xl px-4 duration-300 sm:mt-36">
+        <main className="container mt-12 max-w-6xl px-4 duration-300 sm:mt-36 ">
             <div className="flex items-center gap-4 duration-300 sm:gap-8">
                 <div>
                     <div className="h-14 w-14 rounded-full bg-bg-green-light p-3 sm:h-20 sm:w-20 sm:p-4">

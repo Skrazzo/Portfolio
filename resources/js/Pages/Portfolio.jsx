@@ -13,30 +13,32 @@ import Reviews from "./Components/Reviews";
 export default function Portfolio({ projects, reviews }) {
     return (
         <>
-            <div className="bg-bg-green">
-                <Nav />
-                <PictureTitle />
+            <div className="relative z-10 bg-white">
+                <div className="bg-bg-green">
+                    <Nav />
+                    <PictureTitle />
+                </div>
+                <section id="aboutme">
+                    <AboutMe />
+                </section>
+                <section id="skills">
+                    <Skills />
+                </section>
+                <section id="projects">
+                    <MyProjects projects={projects} />
+                </section>
+                <section id="timeline">
+                    <Timeline />
+                </section>
+                <section id="reviews" className="pb-16">
+                    <Reviews reviews={reviews} />
+                </section>
             </div>
-            <section id="aboutme">
-                <AboutMe />
-            </section>
-            <section id="skills">
-                <Skills />
-            </section>
-            <section id="projects">
-                <MyProjects projects={projects} />
-            </section>
-            <section id="timeline">
-                <Timeline />
-            </section>
-            <section id="reviews">
-                <Reviews reviews={reviews} />
-            </section>
-            {/* <section id="contact">
-                <TipTap />
-            </section> */}
+            <div className="h-96 bg-transparent"></div>
 
-            <div className=" py-36"></div>
+            <section id="contact" className="-z-10">
+                <TipTap />
+            </section>
         </>
     );
 }

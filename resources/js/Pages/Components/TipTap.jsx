@@ -258,12 +258,12 @@ export default function TipTap() {
     // const editor = useCurrentEditor();
 
     return (
-        <>
+        <div className="shadow-footer fixed bottom-0 h-96 w-full bg-bg-footer p-16 shadow-black/15">
             <EditorProvider
                 slotBefore={<MenuBar />}
                 extensions={extensions}
                 content={content}
             ></EditorProvider>
-        </>
+        </div>
     );
 }
