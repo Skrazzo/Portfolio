@@ -30,7 +30,10 @@ export default function Portfolio({ projects, reviews }) {
                 <section id="timeline">
                     <Timeline />
                 </section>
-                <section id="reviews" className="pb-16">
+                <section
+                    id="reviews"
+                    className="shadow-footer pb-16 shadow-black/15"
+                >
                     <Reviews reviews={reviews} />
                 </section>
             </div>

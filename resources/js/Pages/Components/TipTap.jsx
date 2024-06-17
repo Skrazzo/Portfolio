@@ -5,11 +5,17 @@ import ListItem from "@tiptap/extension-list-item";
 import TextStyle from "@tiptap/extension-text-style";
 import { EditorProvider, useCurrentEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import React from "react";
+import React, { useRef } from "react";
 
 import emailjs from "@emailjs/browser";
 import TypeComponent from "./TypeComponent";
 import IconMessages from "../Icons/IconMessages";
+import IconBold from "../Icons/IconBold";
+import IconMail from "../Icons/IconMail";
+import IconItalic from "../Icons/IconItalic";
+import IconStrike from "../Icons/IconStrike";
+import IconH1 from "../Icons/IconH1";
+import IconH2 from "../Icons/IconH2";
 
 // define your extension array
 
@@ -43,33 +49,45 @@ const MenuBar = () => {
     }
 
     return (
-        <div className="control-group">
+        <div className="control-group border">
             <div className="button-group">
-                <button onClick={send}>Send</button>
+                {/* <button onClick={send}>Send</button> */}
                 <button
                     onClick={() => editor.chain().focus().toggleBold().run()}
                     disabled={!editor.can().chain().focus().toggleBold().run()}
-                    className={editor.isActive("bold") ? "is-active" : ""}
+                    className={
+                        editor.isActive("bold")
+                            ? "is-active"
+                            : "duration-150 active:scale-90"
+                    }
                 >
-                    Bold
+                    <IconBold className="h-7 w-7 text-text-dark" />
                 </button>
                 <button
                     onClick={() => editor.chain().focus().toggleItalic().run()}
                     disabled={
                         !editor.can().chain().focus().toggleItalic().run()
                     }
-                    className={editor.isActive("italic") ? "is-active" : ""}
+                    className={
+                        editor.isActive("italic")
+                            ? "is-active"
+                            : "duration-150 active:scale-90"
+                    }
                 >
-                    Italic
+                    <IconItalic className="h-7 w-7 text-text-dark" />
                 </button>
                 <button
                     onClick={() => editor.chain().focus().toggleStrike().run()}
                     disabled={
                         !editor.can().chain().focus().toggleStrike().run()
                     }
-                    className={editor.isActive("strike") ? "is-active" : ""}
+                    className={
+                        editor.isActive("strike")
+                            ? "is-active"
+                            : "duration-150 active:scale-90"
+                    }
                 >
-                    Strike
+                    <IconStrike className="h-7 w-7 text-text-dark" />
                 </button>
 
                 <button
@@ -79,10 +97,10 @@ const MenuBar = () => {
                     className={
                         editor.isActive("heading", { level: 1 })
                             ? "is-active"
-                            : ""
+                            : "duration-150 active:scale-90"
                     }
                 >
-                    H1
+                    <IconH1 className="h-7 w-7 text-text-dark" />
                 </button>
                 <button
                     onClick={() =>
@@ -91,10 +109,10 @@ const MenuBar = () => {
                     className={
                         editor.isActive("heading", { level: 2 })
                             ? "is-active"
-                            : ""
+                            : "duration-150 active:scale-90"
                     }
                 >
-                    H2
+                    <IconH2 className="h-7 w-7 text-text-dark" />
                 </button>
             </div>
         </div>
@@ -118,9 +136,10 @@ const extensions = [
 
 export default function TipTap() {
     // const editor = useCurrentEditor();
+    const emailRef = useRef(null);
 
     return (
-        <div className="shadow-footer fixed bottom-0 h-96 w-full bg-bg-footer shadow-black/15">
+        <div className="fixed bottom-0 h-96 w-full bg-bg-footer">
             <div className="container max-w-screen-2xl px-2">
                 <div className="mt-8 flex gap-4 sm:mt-16">
                     <IconMessages className="text-bg-green-light max-sm:w-12" />
@@ -132,8 +151,21 @@ export default function TipTap() {
                     />
                 </div>
 
-                <div className="mt-6 grid grid-cols-3 sm:mt-12">
-                    <div className="col-span-2">
+                <div className="mt-6 grid grid-cols-3 items-center gap-x-8 gap-y-4 sm:mt-12">
+                    <div className="bg-bg-white col-span-2 flex items-center gap-2 rounded border px-2 py-1">
+                        <IconMail className="h-9 w-9 text-text-secondary/50" />
+                        <input
+                            type="text"
+                            ref={emailRef}
+                            className="flex-1 text-xl text-text-dark outline-none"
+                            placeholder="Your email address"
+                        />
+                    </div>
+                    <div className="text-project-description font-semibold text-text-dark">
+                        Other links
+                    </div>
+
+                    <div className="col-span-2 overflow-hidden rounded-lg">
                         <EditorProvider
                             slotBefore={<MenuBar />}
                             extensions={extensions}

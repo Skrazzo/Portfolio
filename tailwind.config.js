@@ -62,7 +62,7 @@ export default {
                 glow: "0 0 10px 0",
                 "glow-hover": "0 0 20px 0",
                 chapter: "0 0 0 5px",
-                footer: "0 4px 1rem inset",
+                footer: "0 0.5rem 1rem -0.35rem",
             },
         },
     },
