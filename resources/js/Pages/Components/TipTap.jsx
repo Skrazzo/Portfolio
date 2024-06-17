@@ -8,6 +8,8 @@ import StarterKit from "@tiptap/starter-kit";
 import React from "react";
 
 import emailjs from "@emailjs/browser";
+import TypeComponent from "./TypeComponent";
+import IconMessages from "../Icons/IconMessages";
 
 // define your extension array
 
@@ -258,12 +260,28 @@ export default function TipTap() {
     // const editor = useCurrentEditor();
 
     return (
-        <div className="shadow-footer fixed bottom-0 h-96 w-full bg-bg-footer p-16 shadow-black/15">
-            <EditorProvider
-                slotBefore={<MenuBar />}
-                extensions={extensions}
-                content={content}
-            ></EditorProvider>
+        <div className="shadow-footer fixed bottom-0 h-96 w-full bg-bg-footer shadow-black/15">
+            <div className="container max-w-screen-2xl px-2">
+                <div className="mt-8 flex gap-4 sm:mt-16">
+                    <IconMessages className="text-bg-green-light max-sm:w-12" />
+                    <TypeComponent
+                        sequence={["Let's have a chat"]}
+                        // title={false}
+                        // className="mt-3 text-3xl font-bold text-bg-green-light/95 sm:mt-[10px] sm:text-title"
+                        className="mt-3 font-bold text-bg-green-light/95"
+                    />
+                </div>
+
+                <div className="mt-6 grid grid-cols-3 sm:mt-12">
+                    <div className="col-span-2">
+                        <EditorProvider
+                            slotBefore={<MenuBar />}
+                            extensions={extensions}
+                            content={content}
+                        ></EditorProvider>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
