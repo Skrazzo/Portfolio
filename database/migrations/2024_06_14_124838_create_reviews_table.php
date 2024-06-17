@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('review');
             $table->integer('rating')->max(5)->min(1);
+            $table->string('download_link')->nullable();
             $table->date('date')->default(now());
         });
     }

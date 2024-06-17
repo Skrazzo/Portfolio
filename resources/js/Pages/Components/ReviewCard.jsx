@@ -1,6 +1,7 @@
 import React from "react";
 import IconUser from "../Icons/IconUser";
 import IconStar from "../Icons/IconStar";
+import IconDownloadFIle from "../Icons/IconDownloadFIle";
 
 export default function ReviewCard(props) {
     const Stars = ({ stars }) => {
@@ -61,6 +62,19 @@ export default function ReviewCard(props) {
                 </div>
 
                 <span className="text-xl text-text-dark">{props.review}</span>
+                {props.download_link && (
+                    <div className="flex">
+                        <a
+                            href={props.download_link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex select-none items-center gap-1 rounded border bg-bg-footer p-1 duration-150"
+                        >
+                            <IconDownloadFIle className="text-stars " />
+                            <span className="text-text-dark">Full version</span>
+                        </a>
+                    </div>
+                )}
             </div>
         </div>
     );
