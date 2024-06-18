@@ -95,3 +95,17 @@ html {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
+
+.loader {
+    animation: loader forwards 500ms ease-out;
+}
+@keyframes loader {
+    0% {
+        opacity: 0;
+        scale: 0.5;
+    }
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+}

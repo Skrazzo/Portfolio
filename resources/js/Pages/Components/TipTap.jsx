@@ -22,12 +22,13 @@ import IconGithub from "../Icons/IconGithub";
 import IconLinkedin from "../Icons/IconLinkedin";
 import IconSend from "../Icons/IconSend";
 import ReactConfetti from "react-confetti";
+import Loader from "./Loader";
 
 // define your extension array
 
 const content = "<p>Hello World!</p>";
 
-const MenuBar = ({ emailRef, runConfetti }) => {
+const MenuBar = ({ emailRef, runConfetti, setSending }) => {
     const { editor } = useCurrentEditor();
 
     if (!editor) {
@@ -49,6 +50,8 @@ const MenuBar = ({ emailRef, runConfetti }) => {
             email: email,
         };
 
+        setSending(true);
+
         emailjs
             .send("service_sp2lrdb", "template_mcwlt1l", data, {
                 publicKey: "_x7BiFEZyGo34c-er",
@@ -56,11 +59,14 @@ const MenuBar = ({ emailRef, runConfetti }) => {
             .then(
                 () => {
                     runConfetti();
+                    emailRef.current.value = "";
+                    editor.commands.clearContent();
                 },
                 (error) => {
                     alert("FAILED...", error);
                 },
-            );
+            )
+            .finally(() => setSending(false));
     }
 
     return (
@@ -158,7 +164,7 @@ const extensions = [
 export default function TipTap() {
     const emailRef = useRef(null);
     const [confetti, setConfetti] = useState(false);
-    const [sending, setSending] = useState(true);
+    const [sending, setSending] = useState(false);
 
     function runConfetti() {
         setConfetti(true);
@@ -199,12 +205,18 @@ export default function TipTap() {
                         Other links
                     </div>
 
-                    <div className="col-span-2 overflow-hidden rounded-lg border border-text-secondary/35 bg-bg-white">
+                    <div className="relative col-span-2 overflow-hidden rounded-lg border border-text-secondary/35 bg-bg-white">
+                        {sending && (
+                            <div className="absolute z-10 flex h-full w-full items-center justify-center bg-bg-footer/50">
+                                <Loader className="loader h-12 w-12 fill-text-dark text-text-dark" />
+                            </div>
+                        )}
                         <EditorProvider
                             slotBefore={
                                 <MenuBar
                                     emailRef={emailRef}
                                     runConfetti={runConfetti}
+                                    setSending={setSending}
                                 />
                             }
                             extensions={extensions}
