@@ -5,7 +5,7 @@ import ListItem from "@tiptap/extension-list-item";
 import TextStyle from "@tiptap/extension-text-style";
 import { EditorProvider, useCurrentEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 import emailjs from "@emailjs/browser";
 import TypeComponent from "./TypeComponent";
@@ -21,12 +21,13 @@ import IconInstagram from "../Icons/IconInstagram";
 import IconGithub from "../Icons/IconGithub";
 import IconLinkedin from "../Icons/IconLinkedin";
 import IconSend from "../Icons/IconSend";
+import ReactConfetti from "react-confetti";
 
 // define your extension array
 
 const content = "<p>Hello World!</p>";
 
-const MenuBar = ({ emailRef }) => {
+const MenuBar = ({ emailRef, runConfetti }) => {
     const { editor } = useCurrentEditor();
 
     if (!editor) {
@@ -41,6 +42,7 @@ const MenuBar = ({ emailRef }) => {
         }
 
         if (editor.getText() === "Hello World!") return;
+        if (editor.getText() === "") return;
 
         let data = {
             message: "" + editor.getHTML() + "",
@@ -53,10 +55,10 @@ const MenuBar = ({ emailRef }) => {
             })
             .then(
                 () => {
-                    console.log("SUCCESS!");
+                    runConfetti();
                 },
                 (error) => {
-                    console.log("FAILED...", error);
+                    alert("FAILED...", error);
                 },
             );
     }
@@ -154,11 +156,24 @@ const extensions = [
 ];
 
 export default function TipTap() {
-    // const editor = useCurrentEditor();
     const emailRef = useRef(null);
+    const [confetti, setConfetti] = useState(false);
+    const [sending, setSending] = useState(true);
+
+    function runConfetti() {
+        setConfetti(true);
+    }
 
     return (
         <div className="fixed bottom-0 h-[570px] w-full bg-bg-footer sm:h-[600px]">
+            {confetti && (
+                <ReactConfetti
+                    onConfettiComplete={() => setConfetti(false)}
+                    width={window.innerWidth}
+                    height={window.innerHeight}
+                    recycle={false}
+                />
+            )}
             <div className="container max-w-screen-2xl px-2 sm:px-4">
                 <div className="mt-8 flex gap-4 sm:mt-16">
                     <IconMessages className="text-bg-green-light max-sm:w-12" />
@@ -186,7 +201,12 @@ export default function TipTap() {
 
                     <div className="col-span-2 overflow-hidden rounded-lg border border-text-secondary/35 bg-bg-white">
                         <EditorProvider
-                            slotBefore={<MenuBar emailRef={emailRef} />}
+                            slotBefore={
+                                <MenuBar
+                                    emailRef={emailRef}
+                                    runConfetti={runConfetti}
+                                />
+                            }
                             extensions={extensions}
                             content={content}
                         ></EditorProvider>
