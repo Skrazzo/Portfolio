@@ -32,12 +32,12 @@ export default function Portfolio({ projects, reviews }) {
                 </section>
                 <section
                     id="reviews"
-                    className="shadow-footer pb-16 shadow-black/15"
+                    className="pb-16 shadow-footer shadow-black/15"
                 >
                     <Reviews reviews={reviews} />
                 </section>
             </div>
-            <div className="h-96 bg-transparent"></div>
+            <div className="h-[520px] bg-transparent"></div>
 
             <section id="contact" className="-z-10">
                 <TipTap />

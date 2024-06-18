@@ -16,12 +16,17 @@ import IconItalic from "../Icons/IconItalic";
 import IconStrike from "../Icons/IconStrike";
 import IconH1 from "../Icons/IconH1";
 import IconH2 from "../Icons/IconH2";
+import FooterLink from "./FooterLink";
+import IconInstagram from "../Icons/IconInstagram";
+import IconGithub from "../Icons/IconGithub";
+import IconLinkedin from "../Icons/IconLinkedin";
+import IconSend from "../Icons/IconSend";
 
 // define your extension array
 
 const content = "<p>Hello World!</p>";
 
-const MenuBar = () => {
+const MenuBar = ({ emailRef }) => {
     const { editor } = useCurrentEditor();
 
     if (!editor) {
@@ -29,9 +34,14 @@ const MenuBar = () => {
     }
 
     function send() {
+        const email = emailRef.current.value;
+        if (!email.match(/\w{4,}@\w{4,}.\w{2,}/)) {
+            alert("Please enter a valid email address");
+        }
+
         let data = {
             message: "" + editor.getHTML() + "",
-            email: "hello@world.com",
+            email: email,
         };
 
         emailjs
@@ -49,9 +59,8 @@ const MenuBar = () => {
     }
 
     return (
-        <div className="control-group border">
-            <div className="button-group">
-                {/* <button onClick={send}>Send</button> */}
+        <div className="control-group">
+            <div className="button-group border-b border-text-secondary/35">
                 <button
                     onClick={() => editor.chain().focus().toggleBold().run()}
                     disabled={!editor.can().chain().focus().toggleBold().run()}
@@ -114,6 +123,13 @@ const MenuBar = () => {
                 >
                     <IconH2 className="h-7 w-7 text-text-dark" />
                 </button>
+                <div
+                    className="ml-auto flex cursor-pointer items-center gap-1 rounded border border-text-green/50 bg-text-green/25 p-1  text-text-dark"
+                    onClick={send}
+                >
+                    <IconSend />
+                    <span>Send</span>
+                </div>
             </div>
         </div>
     );
@@ -139,7 +155,7 @@ export default function TipTap() {
     const emailRef = useRef(null);
 
     return (
-        <div className="fixed bottom-0 h-96 w-full bg-bg-footer">
+        <div className="fixed bottom-0 h-[520px] w-full bg-bg-footer">
             <div className="container max-w-screen-2xl px-2">
                 <div className="mt-8 flex gap-4 sm:mt-16">
                     <IconMessages className="text-bg-green-light max-sm:w-12" />
@@ -152,7 +168,7 @@ export default function TipTap() {
                 </div>
 
                 <div className="mt-6 grid grid-cols-3 items-center gap-x-8 gap-y-4 sm:mt-12">
-                    <div className="bg-bg-white col-span-2 flex items-center gap-2 rounded border px-2 py-1">
+                    <div className="col-span-2 flex items-center gap-2 rounded-lg border border-text-secondary/35 bg-bg-white px-2 py-1">
                         <IconMail className="h-9 w-9 text-text-secondary/50" />
                         <input
                             type="text"
@@ -165,12 +181,39 @@ export default function TipTap() {
                         Other links
                     </div>
 
-                    <div className="col-span-2 overflow-hidden rounded-lg">
+                    <div className="col-span-2 overflow-hidden rounded-lg border border-text-secondary/35 bg-bg-white">
                         <EditorProvider
-                            slotBefore={<MenuBar />}
+                            slotBefore={<MenuBar emailRef={emailRef} />}
                             extensions={extensions}
                             content={content}
                         ></EditorProvider>
+                    </div>
+                    <div className="flex h-full flex-col justify-between ">
+                        <FooterLink
+                            icon={<IconMail className="h-11 w-11" />}
+                            text={"skrazzo@proton.me"}
+                            link="mailto:skrazzo@proton.me"
+                        />
+                        <FooterLink
+                            icon={<IconInstagram className="h-11 w-11" />}
+                            text={"skrazzo"}
+                            link="mailto:skrazzo@proton.me"
+                        />
+                        <FooterLink
+                            icon={
+                                <IconGithub
+                                    strokeWidth={1}
+                                    className="h-11 w-11"
+                                />
+                            }
+                            text={"Skrazzo"}
+                            link="https://github.com/Skrazzo"
+                        />
+                        <FooterLink
+                            icon={<IconLinkedin className="h-11 w-11" />}
+                            text={"Leons Aleksandrovs"}
+                            link="mailto:skrazzo@proton.me"
+                        />
                     </div>
                 </div>
             </div>

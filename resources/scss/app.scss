@@ -36,6 +36,26 @@ html {
     // scroll-behavior: smooth;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    @apply rounded-md bg-bg-green-light/95;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-bg-green-light/80;
+}
+
 .carousel-btn {
     overflow: hidden;
     border-radius: 1rem;
