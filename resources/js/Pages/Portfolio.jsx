@@ -37,7 +37,7 @@ export default function Portfolio({ projects, reviews }) {
                     <Reviews reviews={reviews} />
                 </section>
             </div>
-            <div className="h-[520px] bg-transparent"></div>
+            <div className="h-[570px] bg-transparent sm:h-[600px]"></div>
 
             <section id="contact" className="-z-10">
                 <TipTap />

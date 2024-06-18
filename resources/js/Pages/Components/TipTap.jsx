@@ -37,7 +37,10 @@ const MenuBar = ({ emailRef }) => {
         const email = emailRef.current.value;
         if (!email.match(/\w{4,}@\w{4,}.\w{2,}/)) {
             alert("Please enter a valid email address");
+            return;
         }
+
+        if (editor.getText() === "Hello World!") return;
 
         let data = {
             message: "" + editor.getHTML() + "",
@@ -155,8 +158,8 @@ export default function TipTap() {
     const emailRef = useRef(null);
 
     return (
-        <div className="fixed bottom-0 h-[520px] w-full bg-bg-footer">
-            <div className="container max-w-screen-2xl px-2">
+        <div className="fixed bottom-0 h-[570px] w-full bg-bg-footer sm:h-[600px]">
+            <div className="container max-w-screen-2xl px-2 sm:px-4">
                 <div className="mt-8 flex gap-4 sm:mt-16">
                     <IconMessages className="text-bg-green-light max-sm:w-12" />
                     <TypeComponent
@@ -167,17 +170,17 @@ export default function TipTap() {
                     />
                 </div>
 
-                <div className="mt-6 grid grid-cols-3 items-center gap-x-8 gap-y-4 sm:mt-12">
+                <div className="mt-6 grid grid-cols-1 items-center gap-x-8 gap-y-4 sm:mt-12 xl:grid-cols-3">
                     <div className="col-span-2 flex items-center gap-2 rounded-lg border border-text-secondary/35 bg-bg-white px-2 py-1">
                         <IconMail className="h-9 w-9 text-text-secondary/50" />
                         <input
                             type="text"
                             ref={emailRef}
                             className="flex-1 text-xl text-text-dark outline-none"
-                            placeholder="Your email address"
+                            placeholder="your@address.com"
                         />
                     </div>
-                    <div className="text-project-description font-semibold text-text-dark">
+                    <div className="text-project-description font-semibold text-text-dark max-xl:hidden">
                         Other links
                     </div>
 
@@ -188,7 +191,7 @@ export default function TipTap() {
                             content={content}
                         ></EditorProvider>
                     </div>
-                    <div className="flex h-full flex-col justify-between ">
+                    <div className="flex h-full justify-center gap-2 xl:flex-col xl:justify-between ">
                         <FooterLink
                             icon={<IconMail className="h-11 w-11" />}
                             text={"skrazzo@proton.me"}

@@ -52,7 +52,7 @@ export default function Reviews({ reviews = [] }) {
     }, [isScrolling]);
 
     return (
-        <div className="container max-w-screen-2xl px-2">
+        <div className="container max-w-screen-2xl px-2 sm:px-4">
             <div className="mt-4 flex gap-4">
                 <IconReviews className="fill-bg-green-light max-sm:w-12" />
                 <TypeComponent
