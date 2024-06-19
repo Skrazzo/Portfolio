@@ -13,6 +13,7 @@ export default {
                     project: "#43584C",
                 },
                 bg: {
+                    white: "#FFFFFF",
                     green: "#222724",
                     "green-light": "#2D3932",
                     footer: "#F8F9FA",
@@ -61,6 +62,7 @@ export default {
                 glow: "0 0 10px 0",
                 "glow-hover": "0 0 20px 0",
                 chapter: "0 0 0 5px",
+                footer: "0 0.5rem 1rem -0.35rem",
             },
         },
     },

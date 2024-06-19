@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('showcaseUrl');
             $table->string('githubUrl')->nullable();
             $table->string('demoUrl')->nullable();
-            $table->timestamps();
+            $table->date('date')->default(now());
         });
     }
 

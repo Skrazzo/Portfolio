@@ -1,0 +1,102 @@
+/* Basic editor styles */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    @apply bg-bg-white  p-2;
+
+    button {
+        // border: 1px solid rgba($color: #000000, $alpha: 0.1);
+        border: 1px solid rgba($color: #000000, $alpha: 0);
+        border-radius: 0.25rem;
+        padding: 0.25rem;
+    }
+
+    .is-active {
+        @apply border border-text-secondary/20 bg-bg-footer;
+    }
+}
+
+.tiptap {
+    padding: 1rem;
+    height: 200px;
+    outline: none;
+
+    overflow-y: scroll;
+
+    :first-child {
+        margin-top: 0;
+    }
+
+    a {
+        cursor: pointer;
+        @apply text-text-dark;
+    }
+
+    /* List styles */
+    ul,
+    ol {
+        padding: 0 1rem;
+        margin: 1.25rem 1rem 1.25rem 0.4rem;
+
+        li p {
+            margin-top: 0.25em;
+            margin-bottom: 0.25em;
+        }
+    }
+
+    /* Heading styles */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 1rem;
+        text-wrap: pretty;
+    }
+
+    h1 {
+        letter-spacing: 1px;
+        font-weight: 700;
+        font-size: 2rem;
+
+        margin-bottom: 0.75rem;
+    }
+
+    h2 {
+        font-weight: 600;
+        font-size: 1.3rem;
+
+        margin-bottom: 0.25rem;
+    }
+
+    pre {
+        background: var(--black);
+        border-radius: 0.5rem;
+        color: var(--white);
+        font-family: "JetBrainsMono", monospace;
+        margin: 1.5rem 0;
+        padding: 0.75rem 1rem;
+
+        code {
+            background: none;
+            color: inherit;
+            font-size: 0.8rem;
+            padding: 0;
+        }
+    }
+
+    blockquote {
+        border-left: 3px solid var(--gray-3);
+        margin: 1.5rem 0;
+        padding-left: 1rem;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid var(--gray-2);
+        margin: 2rem 0;
+    }
+}
