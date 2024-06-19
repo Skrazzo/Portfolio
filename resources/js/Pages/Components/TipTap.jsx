@@ -23,6 +23,7 @@ import IconLinkedin from "../Icons/IconLinkedin";
 import IconSend from "../Icons/IconSend";
 import ReactConfetti from "react-confetti";
 import Loader from "./Loader";
+import Link from "@tiptap/extension-link";
 
 // define your extension array
 
@@ -37,7 +38,7 @@ const MenuBar = ({ emailRef, runConfetti, setSending }) => {
 
     function send() {
         const email = emailRef.current.value;
-        if (!email.match(/\w{4,}@\w{4,}.\w{2,}/)) {
+        if (!email.match(/[\w|\W]{4,}@[\w|\W]{4,}\.\w{2,}/)) {
             alert("Please enter a valid email address");
             return;
         }
@@ -149,15 +150,9 @@ const MenuBar = ({ emailRef, runConfetti, setSending }) => {
 const extensions = [
     Color.configure({ types: [TextStyle.name, ListItem.name] }),
     TextStyle.configure({ types: [ListItem.name] }),
-    StarterKit.configure({
-        bulletList: {
-            keepMarks: true,
-            keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
-        },
-        orderedList: {
-            keepMarks: true,
-            keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
-        },
+    StarterKit.configure({}),
+    Link.configure({
+        autolink: false,
     }),
 ];
 

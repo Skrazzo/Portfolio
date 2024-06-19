@@ -20,6 +20,7 @@
     "@inertiajs/inertia-react": "^0.8.1",
     "@inertiajs/react": "^1.0.15",
     "@tiptap/extension-color": "^2.4.0",
+    "@tiptap/extension-link": "^2.4.0",
     "@tiptap/extension-text-style": "^2.4.0",
     "@tiptap/pm": "^2.4.0",
     "@tiptap/react": "^2.4.0",

@@ -29,6 +29,11 @@
         margin-top: 0;
     }
 
+    a {
+        cursor: pointer;
+        @apply text-text-dark;
+    }
+
     /* List styles */
     ul,
     ol {
