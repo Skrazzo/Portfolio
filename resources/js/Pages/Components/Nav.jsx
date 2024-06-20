@@ -38,7 +38,7 @@ export default function Nav() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: 1 }}
+                transition={{ delay: 0.5 }}
             >
                 <IconEarth className="w-12 xl:w-section-icon" />
                 <TypeComponent
@@ -64,7 +64,7 @@ export default function Nav() {
                     transition={{
                         type: "spring",
                         bounce: 0.4,
-                        delay: 1,
+                        delay: 0.6,
                     }}
                     className="rounded-full border-4 border-bg-green-light bg-bg-green-light/50  max-sm:rounded-3xl "
                 >

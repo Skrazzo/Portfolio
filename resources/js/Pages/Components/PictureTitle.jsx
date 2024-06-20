@@ -7,13 +7,13 @@ export default function PictureTitle() {
     return (
         <>
             <main className="flex justify-between px-8 max-lg:flex-col max-lg:flex-col-reverse sm:px-12">
-                <figure className="relative max-sm:mt-8">
+                <figure className="relative overflow-hidden max-sm:mt-8">
                     <div className="absolute h-full w-full bg-bg-green/25"></div>
                     <motion.img
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 1 }}
+                        transition={{ delay: 0.5 }}
                         src={"me.png"}
                         alt="picture of me"
                         className="mx-auto"
@@ -25,7 +25,7 @@ export default function PictureTitle() {
                         initial={{ opacity: 0, x: 100 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 1 }}
+                        transition={{ delay: 0 }}
                         className="text-3xl text-text-green max-sm:hidden"
                     >
                         Leons Aleksandrovs
@@ -34,7 +34,7 @@ export default function PictureTitle() {
                         initial={{ opacity: 0, x: 100 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 1.2 }}
+                        transition={{ delay: 0.2 }}
                         className="bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text text-6.25xl font-extrabold text-transparent"
                     >
                         Full-stack developer
@@ -43,7 +43,7 @@ export default function PictureTitle() {
                         initial={{ opacity: 0, y: 100, scale: 0.7 }}
                         whileInView={{ opacity: 1, y: 0, scale: 1 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 1.5 }}
+                        transition={{ delay: 0.5 }}
                         className="mt-8 rounded-rem bg-gradient-to-r from-gradient-from to-gradient-to px-8 py-4 text-1.75xl font-bold text-bg-green shadow-glow shadow-gradient-to/10  hover:shadow-glow-hover hover:shadow-gradient-to/20 max-sm:rounded-full"
                     >
                         CONTACT ME
