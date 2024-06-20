@@ -124,7 +124,7 @@ export default function Skills() {
                         skills={[
                             { image: "apache.png", name: "apache" },
                             { image: "nginx.svg", name: "nginx" },
-                            { image: "linux.png", name: "linux" },
+                            { image: "linux.png", name: "linux admin" },
                             { image: "node.svg", name: "node.JS" },
                             {
                                 image: "npm.png",
