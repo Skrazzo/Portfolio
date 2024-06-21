@@ -85,7 +85,7 @@ export default function MyProjects({ projects }) {
                                         initial={{ opacity: 0, y: -50 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
-                                        transition={{ delay: 1 }}
+                                        transition={{ delay: 0.5 }}
                                         key={idx}
                                         className="mt-8 select-none text-xl leading-snug text-description first:mt-0 lg:text-project-description"
                                         dangerouslySetInnerHTML={{
@@ -100,7 +100,7 @@ export default function MyProjects({ projects }) {
                                         initial={{ opacity: 0, scale: 0 }}
                                         whileInView={{ opacity: 1, scale: 1 }}
                                         viewport={{ once: true }}
-                                        transition={{ delay: 0.9 }}
+                                        transition={{ delay: 0.4 }}
                                     >
                                         <motion.button
                                             whileHover={{ scale: 1.05 }}
@@ -120,7 +120,7 @@ export default function MyProjects({ projects }) {
                                         initial={{ opacity: 0, scale: 0 }}
                                         whileInView={{ opacity: 1, scale: 1 }}
                                         viewport={{ once: true }}
-                                        transition={{ delay: 1 }}
+                                        transition={{ delay: 0.5 }}
                                     >
                                         <motion.button
                                             whileHover={{ scale: 1.05 }}
@@ -143,7 +143,7 @@ export default function MyProjects({ projects }) {
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: 1 }}
+                                transition={{ delay: 0.5 }}
                                 className="overflow-hidden rounded-lg shadow-xl"
                             >
                                 <PlyrComponent
