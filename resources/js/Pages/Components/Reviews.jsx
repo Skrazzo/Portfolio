@@ -3,6 +3,7 @@ import IconReviews from "../Icons/IconReviews";
 import TypeComponent from "./TypeComponent";
 import ReviewCard from "./ReviewCard";
 import useWindowDimensions from "./Hook/useWindowDimensions";
+import { motion } from "framer-motion";
 
 export default function Reviews({ reviews = [] }) {
     const { width } = useWindowDimensions();
@@ -53,14 +54,18 @@ export default function Reviews({ reviews = [] }) {
 
     return (
         <div className="container max-w-screen-2xl px-2 sm:px-4">
-            <div className="mt-4 flex gap-4">
+            <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="mt-4 flex gap-4"
+            >
                 <IconReviews className="fill-bg-green-light max-sm:w-12" />
-                <TypeComponent
-                    sequence={["Feedback"]}
-                    title={false}
-                    className="mt-3 text-3xl font-bold text-bg-green-light/95 sm:mt-[10px] sm:text-title"
-                />
-            </div>
+                <span className="mt-3 text-3xl font-bold text-bg-green-light/95 sm:mt-[10px] sm:text-title">
+                    Feedback
+                </span>
+            </motion.div>
 
             <div
                 className=" no-scrollbar mt-4 w-full overflow-x-scroll p-2 sm:mt-16"
@@ -74,11 +79,17 @@ export default function Reviews({ reviews = [] }) {
                         <ReviewCard {...review} key={`review-${idx}`} />
                     ))}
                     <div>
-                        <div className="flex w-max items-center rounded-lg bg-bg-footer/70 px-20 py-16">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                            className="flex w-max items-center rounded-lg bg-bg-footer/70 px-20 py-16"
+                        >
                             <span className="text-xl text-text-secondary">
                                 More coming soon ...
                             </span>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
