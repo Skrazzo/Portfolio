@@ -227,7 +227,7 @@ export default function TipTap() {
                         <FooterLink
                             icon={<IconInstagram className="h-11 w-11" />}
                             text={"skrazzo"}
-                            link="mailto:skrazzo@proton.me"
+                            link="https://instagram.com/Skrazzo"
                         />
                         <FooterLink
                             icon={
@@ -242,7 +242,7 @@ export default function TipTap() {
                         <FooterLink
                             icon={<IconLinkedin className="h-11 w-11" />}
                             text={"Leons Aleksandrovs"}
-                            link="mailto:skrazzo@proton.me"
+                            link="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
                         />
                     </div>
                 </div>
