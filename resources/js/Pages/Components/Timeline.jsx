@@ -3,6 +3,7 @@ import Wave1 from "../Icons/Wave1";
 import Chapter from "./Timeline/Chapter";
 import ChapterMobile from "./Timeline/ChapterMobile";
 import Wave2 from "../Icons/Wave2";
+import { motion } from "framer-motion";
 
 export default function Timeline() {
     const timelineData = [
