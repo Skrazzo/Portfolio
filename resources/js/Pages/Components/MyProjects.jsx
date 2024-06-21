@@ -7,6 +7,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import IconGithub from "../Icons/IconGithub";
 import IconClick from "../Icons/IconClick";
+import { motion } from "framer-motion";
 
 export default function MyProjects({ projects }) {
     const ProjectContainer = ({
@@ -39,16 +40,33 @@ export default function MyProjects({ projects }) {
         return (
             <div className="flex-1 px-2 sm:px-4">
                 <div className="flex items-center gap-2">
-                    <Suspense fallback={"Loading..."}>
-                        <Icon className="w-16 fill-icon-project max-lg:w-12 max-sm:w-10" />
-                    </Suspense>
-                    <div className="flex w-full items-center gap-4 max-lg:justify-between">
-                        <p className="text-4xl font-medium text-bg-green-light/95 max-lg:text-2xl max-lg:font-bold">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.5 }}
+                    >
+                        <Suspense fallback={"Loading..."}>
+                            <Icon className="w-16 fill-icon-project max-lg:w-12 max-sm:w-10" />
+                        </Suspense>
+                    </motion.div>
+                    <div className="flex w-full items-center gap-4 overflow-hidden max-lg:justify-between">
+                        <motion.p
+                            initial={{ opacity: 0, x: -100 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.6 }}
+                            className="text-4xl font-medium text-bg-green-light/95 max-lg:text-2xl max-lg:font-bold"
+                        >
                             {title}
-                        </p>
+                        </motion.p>
                         <div className="flex items-center gap-4">
                             {tech.map((skill, idx) => (
-                                <img
+                                <motion.img
+                                    initial={{ opacity: 0, scale: 0, x: -50 }}
+                                    whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.7 + 0.05 * idx }}
                                     key={idx}
                                     className="w-8 rounded-md object-contain max-sm:w-6 max-xsm:hidden"
                                     src={`./Skills/${skill}`}
@@ -63,41 +81,71 @@ export default function MyProjects({ projects }) {
                         <div className="flex flex-col gap-4 max-lg:order-2 max-lg:flex-col-reverse">
                             <section>
                                 {paragraphs.map((p, idx) => (
-                                    <div
+                                    <motion.div
+                                        initial={{ opacity: 0, y: -50 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 1 }}
                                         key={idx}
                                         className="mt-8 select-none text-xl leading-snug text-description first:mt-0 lg:text-project-description"
-                                        dangerouslySetInnerHTML={{ __html: p }}
+                                        dangerouslySetInnerHTML={{
+                                            __html: p,
+                                        }}
                                     />
                                 ))}
                             </section>
                             <div className="flex gap-2">
                                 {githubUrl && (
-                                    <button
-                                        onClick={() =>
-                                            window.open(githubUrl, "_blank")
-                                        }
-                                        className="flex items-center justify-center gap-2 rounded-lg bg-bg-green px-2 py-1 text-sm font-bold text-gradient-from shadow-lg duration-150 hover:scale-105 active:translate-y-1 max-sm:flex-1 sm:text-base lg:text-xl "
+                                    <motion.div
+                                        initial={{ opacity: 0, scale: 0 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.9 }}
                                     >
-                                        <IconGithub className="text-gradient-from/65" />
-                                        <span>GitHub</span>
-                                    </button>
+                                        <motion.button
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ y: 4 }}
+                                            onClick={() =>
+                                                window.open(githubUrl, "_blank")
+                                            }
+                                            className="flex items-center justify-center gap-2 rounded-lg bg-bg-green px-2 py-1 text-sm font-bold text-gradient-from shadow-lg  max-sm:flex-1 sm:text-base lg:text-xl "
+                                        >
+                                            <IconGithub className="text-gradient-from/65" />
+                                            <span>GitHub</span>
+                                        </motion.button>
+                                    </motion.div>
                                 )}
                                 {demoUrl && (
-                                    <button
-                                        onClick={() =>
-                                            window.open(demoUrl, "_blank")
-                                        }
-                                        className="flex items-center justify-center gap-2 rounded-lg bg-bg-green px-2 py-1 text-sm font-bold text-gradient-from shadow-lg duration-150 hover:scale-105 active:translate-y-1 max-sm:flex-1 sm:text-base lg:text-xl "
+                                    <motion.div
+                                        initial={{ opacity: 0, scale: 0 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 1 }}
                                     >
-                                        <IconClick className=" text-gradient-from/65" />
-                                        <span>Demo</span>
-                                    </button>
+                                        <motion.button
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ y: 4 }}
+                                            onClick={() =>
+                                                window.open(demoUrl, "_blank")
+                                            }
+                                            className="flex items-center justify-center gap-2 rounded-lg bg-bg-green px-2 py-1 text-sm font-bold text-gradient-from shadow-lg max-sm:flex-1 sm:text-base lg:text-xl "
+                                        >
+                                            <IconClick className=" text-gradient-from/65" />
+                                            <span>Demo</span>
+                                        </motion.button>
+                                    </motion.div>
                                 )}
                             </div>
                         </div>
 
-                        <div>
-                            <div className="overflow-hidden rounded-lg shadow-xl">
+                        <div className="overflow-hidden">
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 1 }}
+                                className="overflow-hidden rounded-lg shadow-xl"
+                            >
                                 <PlyrComponent
                                     sources={{
                                         type: "video",
@@ -109,7 +157,7 @@ export default function MyProjects({ projects }) {
                                         ],
                                     }}
                                 />
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
