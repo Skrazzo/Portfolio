@@ -4,6 +4,11 @@ import Wave2 from "../Icons/Wave2";
 import { motion } from "framer-motion";
 
 export default function PictureTitle() {
+    const scroll = (section) => {
+        const s = document.querySelector(`#${section}`);
+        s.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
     return (
         <>
             <main className="flex justify-between px-8 max-lg:flex-col max-lg:flex-col-reverse sm:px-12">
@@ -45,6 +50,7 @@ export default function PictureTitle() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.5 }}
                         className="mt-8 rounded-rem bg-gradient-to-r from-gradient-from to-gradient-to px-8 py-4 text-1.75xl font-bold text-bg-green shadow-glow shadow-gradient-to/10  hover:shadow-glow-hover hover:shadow-gradient-to/20 max-sm:rounded-full"
+                        onClick={() => scroll("contact")}
                     >
                         CONTACT ME
                     </motion.button>
