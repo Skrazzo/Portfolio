@@ -25,6 +25,7 @@ import ReactConfetti from "react-confetti";
 import Loader from "./Loader";
 import Link from "@tiptap/extension-link";
 
+import { motion } from "framer-motion";
 // define your extension array
 
 const content = "<p>Hello World!</p>";
@@ -177,13 +178,10 @@ export default function TipTap() {
             )}
             <div className="container max-w-screen-2xl px-2 sm:px-4">
                 <div className="mt-8 flex gap-4 sm:mt-16">
-                    <IconMessages className="text-bg-green-light max-sm:w-12" />
-                    <TypeComponent
-                        sequence={["Let's have a chat"]}
-                        // title={false}
-                        // className="mt-3 text-3xl font-bold text-bg-green-light/95 sm:mt-[10px] sm:text-title"
-                        className="mt-3 font-bold text-bg-green-light/95"
-                    />
+                    <IconMessages className=" text-bg-green-light max-sm:w-12" />
+                    <span className="mt-3 text-3xl font-bold text-bg-green-light/95 sm:text-title">
+                        Let's have a chat
+                    </span>
                 </div>
 
                 <div className="mt-6 grid grid-cols-1 items-center gap-x-8 gap-y-4 sm:mt-12 xl:grid-cols-3">
