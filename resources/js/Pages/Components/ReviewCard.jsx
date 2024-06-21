@@ -2,6 +2,7 @@ import React from "react";
 import IconUser from "../Icons/IconUser";
 import IconStar from "../Icons/IconStar";
 import IconDownloadFIle from "../Icons/IconDownloadFIle";
+import { motion } from "framer-motion";
 
 export default function ReviewCard(props) {
     const Stars = ({ stars }) => {
@@ -41,7 +42,13 @@ export default function ReviewCard(props) {
 
     return (
         <div>
-            <div className="flex w-max min-w-[348px] flex-col gap-4 rounded-lg p-4 shadow-md max-lg:w-full lg:max-w-md">
+            <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="flex w-max min-w-[348px] flex-col gap-4 rounded-lg p-4 shadow-md max-lg:w-full lg:max-w-md"
+            >
                 <div className="flex justify-between">
                     <div className="flex items-center gap-4">
                         <div className="grid place-items-center rounded-full bg-text-green/50 max-sm:hidden sm:h-[50px] sm:w-[50px] ">
@@ -75,7 +82,7 @@ export default function ReviewCard(props) {
                         </a>
                     </div>
                 )}
-            </div>
+            </motion.div>
         </div>
     );
 }
