@@ -1,7 +1,11 @@
-# My portfolio (IKR so cool and awesome)
+# Leons Aleksandrov's Portfolio
+### It contains
 
-## What it has
 - About me
 - Skills
-- My proudest projects
-- Contact me form
+- Timeline
+- Feedback
+- Contact me
+- **_Animations_**
+
+Here's a [link](https://skrazzo.xyz)
