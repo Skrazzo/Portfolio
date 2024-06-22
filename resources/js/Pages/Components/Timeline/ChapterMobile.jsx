@@ -20,7 +20,7 @@ export default function ChapterMobile({
                     transition={{ delay: 0.2 }}
                     className="grid place-items-center"
                 >
-                    <div className="absolute z-0 h-6 w-1 translate-y-1/2  bg-bg-green-light"></div>
+                    {/* <div className="absolute left-1/2 z-0 h-6 w-1 -translate-x-1/2 translate-y-1/2  bg-bg-green-light"></div> */}
                     <div className=" z-10 h-4 w-4 rounded-full bg-gradient-to-b from-gradient-from to-gradient-to shadow-chapter shadow-gradient-from/10"></div>
                 </motion.div>
                 <motion.span
