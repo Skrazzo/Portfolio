@@ -68,7 +68,7 @@ export default function Reviews({ reviews = [] }) {
             </motion.div>
 
             <div
-                className=" no-scrollbar mt-4 w-full overflow-x-scroll p-2 sm:mt-16"
+                className=" mt-4 w-full overflow-x-scroll p-2 sm:mt-16"
                 ref={scrollContainerRef}
             >
                 <div

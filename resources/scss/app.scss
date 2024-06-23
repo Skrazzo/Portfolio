@@ -43,11 +43,13 @@ body {
 /* width */
 ::-webkit-scrollbar {
     width: 0.5rem;
+    height: 0.25rem;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: transparent;
+    // background: transparent;
+    @apply bg-bg-footer;
 }
 
 /* Handle */
