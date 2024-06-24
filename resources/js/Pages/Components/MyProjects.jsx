@@ -131,7 +131,7 @@ export default function MyProjects({ projects }) {
                                             className="flex items-center justify-center gap-2 rounded-lg bg-bg-green px-2 py-1 text-sm font-bold text-gradient-from shadow-lg max-sm:flex-1 sm:text-base lg:text-xl "
                                         >
                                             <IconClick className=" text-gradient-from/65" />
-                                            <span>Demo</span>
+                                            <span>Visit</span>
                                         </motion.button>
                                     </motion.div>
                                 )}

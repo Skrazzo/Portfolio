@@ -191,7 +191,7 @@ export default function TipTap() {
                             type="text"
                             ref={emailRef}
                             className="flex-1 text-xl text-text-dark outline-none"
-                            placeholder="your@address.com"
+                            placeholder="Your email address"
                         />
                     </div>
                     <div className="text-project-description font-semibold text-text-dark max-xl:hidden">
