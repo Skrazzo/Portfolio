@@ -8,24 +8,22 @@ import StarterKit from "@tiptap/starter-kit";
 import React, { useRef, useState } from "react";
 
 import emailjs from "@emailjs/browser";
-import TypeComponent from "./TypeComponent";
-import IconMessages from "../Icons/IconMessages";
+import Link from "@tiptap/extension-link";
+import ReactConfetti from "react-confetti";
 import IconBold from "../Icons/IconBold";
-import IconMail from "../Icons/IconMail";
-import IconItalic from "../Icons/IconItalic";
-import IconStrike from "../Icons/IconStrike";
+import IconGithub from "../Icons/IconGithub";
 import IconH1 from "../Icons/IconH1";
 import IconH2 from "../Icons/IconH2";
-import FooterLink from "./FooterLink";
-import IconInstagram from "../Icons/IconInstagram";
-import IconGithub from "../Icons/IconGithub";
+import IconItalic from "../Icons/IconItalic";
 import IconLinkedin from "../Icons/IconLinkedin";
+import IconMail from "../Icons/IconMail";
+import IconMessages from "../Icons/IconMessages";
 import IconSend from "../Icons/IconSend";
-import ReactConfetti from "react-confetti";
+import IconStrike from "../Icons/IconStrike";
+import IconUpwork from "../Icons/IconUpwork";
+import FooterLink from "./FooterLink";
 import Loader from "./Loader";
-import Link from "@tiptap/extension-link";
 
-import { motion } from "framer-motion";
 // define your extension array
 
 const content = "<p>Hello World!</p>";
@@ -223,9 +221,14 @@ export default function TipTap() {
                             link="mailto:skrazzo@proton.me"
                         />
                         <FooterLink
-                            icon={<IconInstagram className="h-11 w-11" />}
-                            text={"skrazzo"}
-                            link="https://instagram.com/Skrazzo"
+                            icon={<IconUpwork className="h-11 w-11" />}
+                            text={"Leons Aleksandrovs"}
+                            link="https://www.upwork.com/freelancers/~01f0a43601fa270a7d?mp_source=share"
+                        />
+                        <FooterLink
+                            icon={<IconLinkedin className="h-11 w-11" />}
+                            text={"Leons Aleksandrovs"}
+                            link="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
                         />
                         <FooterLink
                             icon={
@@ -236,11 +239,6 @@ export default function TipTap() {
                             }
                             text={"Skrazzo"}
                             link="https://github.com/Skrazzo"
-                        />
-                        <FooterLink
-                            icon={<IconLinkedin className="h-11 w-11" />}
-                            text={"Leons Aleksandrovs"}
-                            link="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
                         />
                     </div>
                 </div>
