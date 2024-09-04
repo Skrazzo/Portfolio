@@ -40,6 +40,11 @@ body {
     overflow-x: hidden;
 }
 
+.about_me__image {
+    width: 619px;
+    aspect-ratio: 1/0.911;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 0.5rem;

@@ -19,9 +19,9 @@ export default function PictureTitle() {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.5 }}
-                        src={"me.png"}
+                        src={"me.webp"}
                         alt="picture of me"
-                        className="mx-auto"
+                        className="about_me__image mx-auto"
                     />
                 </figure>
 

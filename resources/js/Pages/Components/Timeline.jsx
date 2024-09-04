@@ -20,6 +20,12 @@ export default function Timeline() {
             title: "Web dev",
             description:
                 "After enrolling in technical school, I developed a keen interest in creating web applications.",
+        },
+        {
+            date: "June 2024",
+            title: "Signed up to UpWork",
+            description:
+                "During the summer break, I focused on advancing my skills and earning income. I joined UpWork, where I successfully earned money and built strong relationships with quality clients.",
             last: true,
         },
     ];

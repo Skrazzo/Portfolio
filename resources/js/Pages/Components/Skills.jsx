@@ -102,41 +102,41 @@ export default function Skills() {
                         skills={[
                             { image: "html.svg", name: "HTML" },
                             { image: "css.svg", name: "CSS" },
-                            { image: "js.png", name: "JS" },
+                            { image: "js.webp", name: "JS" },
                             { image: "jquery.svg", name: "jQuery" },
-                            { image: "bootstrap.png", name: "bootstrap" },
-                            { image: "tailwind.png", name: "tailwindcss" },
-                            { image: "scss.png", name: "scss" },
+                            { image: "bootstrap.webp", name: "bootstrap" },
+                            { image: "tailwind.webp", name: "tailwindcss" },
+                            { image: "scss.webp", name: "scss" },
                             {
-                                image: "mantine.png",
+                                image: "mantine.webp",
                                 name: "mantine.dev",
                                 className: "rounded-full",
                             },
-                            { image: "php.png", name: "PHP" },
-                            { image: "react.png", name: "react" },
-                            { image: "laravel.png", name: "laravel" },
+                            { image: "php.webp", name: "PHP" },
+                            { image: "react.webp", name: "react" },
+                            { image: "laravel.webp", name: "laravel" },
                             { image: "inertia.svg", name: "inertiajs" },
                             {
-                                image: "filament.png",
+                                image: "filament.webp",
                                 name: "filament",
                                 className: "rounded-full",
                             },
-                            { image: "livewire.png", name: "livewire" },
+                            { image: "livewire.webp", name: "livewire" },
                             {
-                                image: "alphine.png",
+                                image: "alphine.webp",
                                 name: "alphine.JS",
                                 className: "rounded-full",
                             },
                             { image: "vite.svg", name: "vite" },
                             { image: "vitest.svg", name: "vitest" },
                             {
-                                image: "phpunit.png",
+                                image: "phpunit.webp",
                                 name: "PHPUnit",
                                 className: "rounded-full",
                             },
-                            { image: "playwright.png", name: "playwright" },
+                            { image: "playwright.webp", name: "playwright" },
                             {
-                                image: "puppeteer.png",
+                                image: "puppeteer.webp",
                                 name: "puppeteer",
                                 className: "rounded-full",
                             },
@@ -147,20 +147,19 @@ export default function Skills() {
                             <IconComputer className="h-full w-full fill-bg-green" />
                         }
                         skills={[
-                            { image: "apache.png", name: "apache" },
+                            { image: "apache.webp", name: "apache" },
                             { image: "nginx.svg", name: "nginx" },
-                            { image: "linux.png", name: "linux admin" },
+                            { image: "linux.webp", name: "linux admin" },
                             { image: "node.svg", name: "node.JS" },
                             {
-                                image: "npm.png",
+                                image: "npm.webp",
                                 name: "npm",
                                 className: "lowercase",
                             },
-                            { image: "bun.svg", name: "bun" },
-                            { image: "cplusplus.png", name: "c++" },
-                            { image: "csharp.png", name: "c#" },
-                            { image: "python.png", name: "python" },
-                            { image: "postman.png", name: "postman" },
+                            { image: "cplusplus.webp", name: "c++" },
+                            { image: "csharp.webp", name: "c#" },
+                            { image: "python.webp", name: "python" },
+                            { image: "postman.webp", name: "postman" },
                         ]}
                     />
                     <SkillsContainer
@@ -168,8 +167,8 @@ export default function Skills() {
                             <IconDatabase className="h-full w-full fill-bg-green" />
                         }
                         skills={[
-                            { image: "sqlite.png", name: "sqlite" },
-                            { image: "mysql.png", name: "mysql" },
+                            { image: "sqlite.webp", name: "sqlite" },
+                            { image: "mysql.webp", name: "mysql" },
                         ]}
                     />
                 </div>
