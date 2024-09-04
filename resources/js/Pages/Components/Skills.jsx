@@ -35,6 +35,7 @@ export default function Skills() {
                         <img
                             className={`w-5/6 object-contain ${className}`}
                             src={`./Skills/${image}`}
+                            alt={toolTip}
                         />
                     </motion.div>
                 </motion.div>

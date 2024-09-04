@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head lang="en">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Leons Aleksandrovs</title>
+        <meta property="description" content="Full stack developer with over <?= date('Y') - 2020; ?> years of experience, and extensive web skills.">
         <meta property="og:title" content="Leon - Full-stack developer">
         <meta property="og:description" content="Full stack developer with over <?= date('Y') - 2020; ?> years of experience, and extensive web skills.">
         <meta property="og:keywords" content="Full stack developer, React, Laravel, HTML, CSS, JavaScript, PHP">
