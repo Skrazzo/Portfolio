@@ -141,6 +141,7 @@ export default function Skills() {
                                 name: "puppeteer",
                                 className: "rounded-full",
                             },
+                            { image: "cypress.webp", name: "Cypress" },
                         ]}
                     />
                     <SkillsContainer
@@ -161,6 +162,7 @@ export default function Skills() {
                             { image: "csharp.webp", name: "c#" },
                             { image: "python.webp", name: "python" },
                             { image: "postman.webp", name: "postman" },
+                            { image: "yolo.webp", name: "Yolo AI" },
                         ]}
                     />
                     <SkillsContainer
@@ -170,6 +172,7 @@ export default function Skills() {
                         skills={[
                             { image: "sqlite.webp", name: "sqlite" },
                             { image: "mysql.webp", name: "mysql" },
+                            { image: "mongodb.webp", name: "Mongo db" },
                         ]}
                     />
                 </div>

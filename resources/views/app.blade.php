@@ -15,8 +15,46 @@
         <!-- As you can see, we will use vite with jsx syntax for React-->
         @routes
         @inertiaHead
+
+        
     </head>
     <body>
         @inertia
     </body>
+
+    <script>
+        ;["click", "scroll", "mousemove", "touchstart"].forEach(function (e) {
+            window.addEventListener(e, firstInteraction, {
+                once: true,
+            })
+        })
+        
+        let userInteracted = false
+
+        function firstInteraction() {
+            if (!userInteracted) {
+                userInteracted = true
+
+                // Load google analytics
+                if (!document.getElementById("ga-script")) {
+                    // Google tag (gtag.js)
+                    const script = document.createElement("script")
+                    script.src = "https://www.googletagmanager.com/gtag/js?id=G-T4HFQ9N61W"
+                    script.async = true
+
+                    document.head.appendChild(script)
+
+                    script.onload = function () {
+                        window.dataLayer = window.dataLayer || []
+                        function gtag() {
+                            dataLayer.push(arguments)
+                        }
+                        gtag("js", new Date())
+
+                        gtag("config", "G-T4HFQ9N61W")
+                    }
+                }
+            }
+        }
+    </script>
 </html>
