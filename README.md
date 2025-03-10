@@ -8,4 +8,3 @@
 - Contact me
 - **_Animations_**
 
-Here's a [link](https://skrazzo.xyz)
